@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vault Marketing — Lead Generation &amp; Meta Ads for Real Estate &amp; Hospitality</title>
+
+<!-- ── SEO META ── -->
+<meta name="description" content="Vault Marketing runs Meta Ads, Lead Generation &amp; Social Content for Real Estate and Hospitality brands across India. ₹3Cr revenue generated. Under ₹200/lead.">
+
+<!-- ── OPEN GRAPH / SOCIAL SHARING ── -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="Vault Marketing — We Don't Run Ads. We Print Revenue.">
+<meta property="og:description" content="Meta Ads, Lead Generation &amp; Social Content for Real Estate and Hospitality brands. ₹3Cr generated. 200+ leads under ₹200 each.">
+<meta property="og:url"         content="https://vaultmarketing.in">
+<meta property="og:image"       content="https://vaultmarketing.in/og-cover.jpg">
+<meta name="twitter:card"       content="summary_large_image">
+<meta name="twitter:title"      content="Vault Marketing — We Don't Run Ads. We Print Revenue.">
+<meta name="twitter:description" content="Meta Ads, Lead Generation &amp; Social Content for Real Estate and Hospitality brands. ₹3Cr generated. 200+ leads under ₹200 each.">
+
+<!-- ── CONTENT SECURITY POLICY ── -->
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+           style-src 'self' https://fonts.googleapis.com;
+           font-src https://fonts.gstatic.com;
+           script-src 'self';
+           connect-src 'self' https://formspree.io;
+           img-src 'self' data:;">
+
+<!-- ── FONT PERFORMANCE ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<!-- ── STYLESHEET (separated for browser caching) ── -->
+<link rel="stylesheet" href="style.css">
+
+<!-- ── CANONICAL & SITEMAP ── -->
+<link rel="canonical" href="https://vaultmarketing.in">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- ── NOSCRIPT: Reveal elements stay visible if JS is blocked ── -->
+<noscript><style>.reveal { opacity:1 !important; transform:none !important; }</style></noscript>
+
+<!-- ── ANALYTICS: Add your IDs below ──
+  Google Analytics 4:
+    Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com
+  Meta Pixel:
+    Replace YOUR_PIXEL_ID with your Pixel ID from Meta Events Manager
+-->
+
+<!-- Google Analytics 4 (uncomment and replace ID) -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<!-- Meta Pixel (uncomment and replace ID) -->
+<!--
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+-->
+
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<!-- ════════════════════════════
+     LEAD MAGNET MODAL
+════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+
+    <!-- Form State -->
+    <div id="modalFormView">
+      <div class="modal-badge">📄 Free Download</div>
+      <h2 class="modal-title" id="modalHeading">Get Our <span>Case Study</span><br>PDF — Free</h2>
+      <p class="modal-sub">Real numbers. Real campaigns. See exactly how we generated ₹3 Crore in Real Estate revenue, 200+ resort bookings and Page 1 Google rankings.</p>
+
+      <div class="modal-preview">
+        <div class="modal-preview-icon">📊</div>
+        <div>
+          <div class="modal-preview-name">Agency Case Studies 2025</div>
+          <div class="modal-preview-meta">3 Clients · Real Estate · Hospitality · SEO · Full Breakdown</div>
+        </div>
+      </div>
+
+      <div class="modal-form">
+        <!-- Honeypot: hidden from humans, bots fill it → submission rejected -->
+        <input class="hp-field" type="text" id="hp_website" name="website" tabindex="-1" autocomplete="off">
+
+        <div class="form-field">
+          <label class="form-label" for="leadName">Your Name</label>
+          <input class="form-input" type="text" id="leadName" placeholder="Full name" autocomplete="name">
+          <span class="form-error-msg"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="leadPhone">WhatsApp Number</label>
+          <input class="form-input" type="tel" id="leadPhone" placeholder="+91 98765 43210" autocomplete="tel">
+          <span class="form-error-msg"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="leadEmail">Email Address</label>
+          <input class="form-input" type="email" id="leadEmail" placeholder="you@company.com" autocomplete="email">
+          <span class="form-error-msg"></span>
+        </div>
+        <button class="form-submit" id="formSubmit">
+          Download Case Study &nbsp;↓
+        </button>
+        <p class="form-privacy">🔒 No spam, ever. Your details are used only to send you the case study and follow up personally. See our <a href="privacy.html" style="color:var(--accent);text-decoration:none">Privacy Policy</a>.</p>
+      </div>
+    </div>
+
+    <!-- Success State -->
+    <div class="modal-success" id="modalSuccessView">
+      <div class="success-icon">✅</div>
+      <div class="success-title">You're all set!</div>
+      <p class="success-sub">Your case study is ready. Click below to download it — we'll also be in touch shortly.</p>
+      <a id="downloadLink" class="success-download" href="case-studies.pdf" download="Vault-Marketing-Case-Studies-2025.pdf">
+        ↓ &nbsp;Download Case Study
+      </a>
+      <p class="success-note">👋 Expect a call from our team within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     NAV
+════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#home" class="logo">Vault <span>Marketing.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Full-Screen Menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#results">Results</a>
+  <a href="#process">Process</a>
+  <a href="#industries">Industries</a>
+  <a href="#contact" class="menu-cta">Get Started →</a>
+</div>
+
+<!-- ════════════════════════════
+     HERO
+════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    Performance Marketing Agency · India
+  </div>
+  <h1>We Don't Run Ads.<br>We Print <em>Revenue.</em></h1>
+  <div class="hero-bottom">
+    <div>
+      <p class="hero-desc">Full-stack digital marketing for Real Estate developers and Hospitality brands across India — from ads to landing pages to drone visuals.</p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-primary">Get Free Strategy Call →</a>
+        <a href="#results" class="btn-secondary">See Our Results</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-val">₹3Cr+</div><div class="hero-stat-label">Revenue Generated</div></div>
+      <div><div class="hero-stat-val">400+</div><div class="hero-stat-label">Leads &amp; Bookings</div></div>
+      <div><div class="hero-stat-val">&lt;₹200</div><div class="hero-stat-label">Cost Per Lead</div></div>
+    </div>
+  </div>
+  <div class="scroll-line" aria-hidden="true"><span>Scroll</span></div>
+</section>
+
+<!-- ════════════════════════════
+     MARQUEE
+════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Meta Ads <span class="dot">✦</span></span>
+    <span class="marquee-item">Lead Generation <span class="dot">✦</span></span>
+    <span class="marquee-item">Social Media Content <span class="dot">✦</span></span>
+    <span class="marquee-item">Landing Page Design <span class="dot">✦</span></span>
+    <span class="marquee-item">WhatsApp Marketing <span class="dot">✦</span></span>
+    <span class="marquee-item">Drone Photography <span class="dot">✦</span></span>
+    <span class="marquee-item">Real Estate Marketing <span class="dot">✦</span></span>
+    <span class="marquee-item">Hospitality Campaigns <span class="dot">✦</span></span>
+    <span class="marquee-item">Instagram Reels <span class="dot">✦</span></span>
+    <span class="marquee-item">Performance Advertising <span class="dot">✦</span></span>
+    <span class="marquee-item">ROI-Driven Strategy <span class="dot">✦</span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item">Meta Ads <span class="dot">✦</span></span>
+    <span class="marquee-item">Lead Generation <span class="dot">✦</span></span>
+    <span class="marquee-item">Social Media Content <span class="dot">✦</span></span>
+    <span class="marquee-item">Landing Page Design <span class="dot">✦</span></span>
+    <span class="marquee-item">WhatsApp Marketing <span class="dot">✦</span></span>
+    <span class="marquee-item">Drone Photography <span class="dot">✦</span></span>
+    <span class="marquee-item">Real Estate Marketing <span class="dot">✦</span></span>
+    <span class="marquee-item">Hospitality Campaigns <span class="dot">✦</span></span>
+    <span class="marquee-item">Instagram Reels <span class="dot">✦</span></span>
+    <span class="marquee-item">Performance Advertising <span class="dot">✦</span></span>
+    <span class="marquee-item">ROI-Driven Strategy <span class="dot">✦</span></span>
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     SERVICES
+════════════════════════════ -->
+<section class="services" id="services">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Six Services.<br>One Outcome.</h2>
+    </div>
+    <p class="section-desc">Everything we do is built around one goal — generating measurable revenue for our clients.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🎯</div>
+      <div class="service-num">01</div>
+      <div class="service-name">Lead Generation</div>
+      <p class="service-desc">High-intent leads delivered straight to your pipeline. We've generated 200+ Real Estate leads at under ₹200 each — 10x below industry average.</p>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">📱</div>
+      <div class="service-num">02</div>
+      <div class="service-name">Meta Ads</div>
+      <p class="service-desc">Full-funnel Facebook &amp; Instagram campaigns — audience research, creative, copy, A/B testing and relentless optimization for the lowest possible CPL.</p>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🎬</div>
+      <div class="service-num">03</div>
+      <div class="service-name">Social Content</div>
+      <p class="service-desc">Professional Reels, photography and social media management that builds brand trust and converts followers into buyers. Full in-house production.</p>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚡</div>
+      <div class="service-num">04</div>
+      <div class="service-name">Landing Pages</div>
+      <p class="service-desc">High-converting landing pages built specifically for your campaigns. Fast, mobile-first, designed to turn clicks into calls — not just visitors into bounces.</p>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">💬</div>
+      <div class="service-num">05</div>
+      <div class="service-name">WhatsApp Marketing</div>
+      <p class="service-desc">Automated WhatsApp sequences that follow up with every lead instantly — before they go cold. Personalised, timely messages that convert enquiries into site visits and bookings.</p>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🚁</div>
+      <div class="service-num">06</div>
+      <div class="service-name">Drone &amp; Videography</div>
+      <p class="service-desc">Cinematic aerial and ground-level visuals for real estate plots, resorts and luxury properties. Footage that makes buyers feel the location before they visit.</p>
+      <div class="service-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     RESULTS
+════════════════════════════ -->
+<section class="results" id="results">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Proof of Work</div>
+      <h2 class="section-title" style="color:white">Real Numbers.<br>Real Clients.</h2>
+    </div>
+    <p class="section-desc">No vanity metrics. Just revenue, leads and bookings that changed businesses.</p>
+  </div>
+
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <div class="result-industry">🏠 Real Estate · Dehradun</div>
+      <div class="result-metric">₹3Cr</div>
+      <div class="result-metric-label">Revenue Generated</div>
+      <div class="result-divider"></div>
+      <div class="result-detail">Plot sales in Doiwala, Dehradun. <strong>200+ leads</strong> in <strong>1–2 months</strong> at <strong>under ₹200/lead</strong> on a budget under ₹50K.<br><br>Industry average CPL: ₹800–₹2,000. We delivered at <strong>10x below market.</strong></div>
+    </div>
+    <div class="result-card reveal reveal-delay-1">
+      <div class="result-industry">🏨 Hospitality · Naqsh Resort</div>
+      <div class="result-metric">200+</div>
+      <div class="result-metric-label">Direct Bookings</div>
+      <div class="result-divider"></div>
+      <div class="result-detail">Full digital management for a premium resort. <strong>Meta Ads + Reels</strong> to drive direct bookings — eliminating <strong>15–20% OTA commissions</strong> per reservation.<br><br>Total spend: <strong>₹1–3 Lakhs.</strong></div>
+    </div>
+    <div class="result-card reveal reveal-delay-2">
+      <div class="result-industry">🚗 Local SEO · Ottawa, Canada</div>
+      <div class="result-metric">Page 1</div>
+      <div class="result-metric-label">Google Rankings</div>
+      <div class="result-divider"></div>
+      <div class="result-detail">Car detailing in Ottawa — ranked <strong>Page 1 Google</strong> for high-intent keywords.<br><br><strong>"I was getting bookings like crazy, not even talking to nobody. People just searched and booked."</strong><br>— Glam Detailing Owner</div>
+    </div>
+  </div>
+
+  <!-- Lead Magnet Banner -->
+  <div class="lead-magnet-banner reveal">
+    <div class="lm-left">
+      <div class="lm-tag">📄 Free Download</div>
+      <div class="lm-title">Want the Full Case Study Breakdown?</div>
+      <p class="lm-desc">Get our detailed PDF — real ad spend, real leads, real revenue. Free, instant download. No fluff.</p>
+    </div>
+    <button class="lm-btn" id="openModal">Download Free PDF →</button>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     PROCESS
+════════════════════════════ -->
+<section class="process" id="process">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">How We Work</div>
+      <h2 class="section-title">From Brief<br>to Revenue.</h2>
+    </div>
+    <p class="section-desc">A clear, no-fluff process built around speed and results.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <div class="step-name">Strategy Call</div>
+      <div class="step-desc">We audit your situation, understand your goals and identify the highest-leverage opportunities. Free, no-commitment, no fluff.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <div class="step-name">Research &amp; Build</div>
+      <div class="step-desc">Deep audience research, competitor analysis, creative development and campaign architecture built specifically around your market.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <div class="step-name">Launch &amp; Test</div>
+      <div class="step-desc">We go live fast. Multiple ad variations tested simultaneously so we find winning creatives and audiences within the first week.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <div class="step-name">Optimize &amp; Scale</div>
+      <div class="step-desc">Daily monitoring, ruthless A/B testing and continuous optimization to drive CPL down and quality up. Then we scale what works.</div>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">05</div>
+      <div class="step-name">Report &amp; Grow</div>
+      <div class="step-desc">Transparent reporting on every rupee spent and every lead generated. You always know exactly what's happening and what it's returning.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     INDUSTRIES
+════════════════════════════ -->
+<section class="industries" id="industries">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Industries</div>
+      <h2 class="section-title">We Know<br>Your Market.</h2>
+    </div>
+    <p class="section-desc">Deep expertise in two high-ticket industries where our results speak loudest.</p>
+  </div>
+  <div class="industries-grid">
+    <div class="industry-card reveal">
+      <div class="industry-emoji">🏠</div>
+      <div class="industry-name">Real Estate</div>
+      <p class="industry-proof">We've generated ₹3 Crore in plot sales on a budget under ₹50,000. We understand buyers, markets and how to target the right audience at the right time. From plots to apartments to villas.</p>
+      <div class="industry-badge">✦ ₹3Cr Revenue Proven</div>
+    </div>
+    <div class="industry-card reveal reveal-delay-1">
+      <div class="industry-emoji">🏨</div>
+      <div class="industry-name">Hospitality</div>
+      <p class="industry-proof">Resorts, hotels and boutique stays — we drive direct bookings through Meta Ads and compelling content, eliminating OTA dependency and protecting your margins on every reservation.</p>
+      <div class="industry-badge">✦ 200+ Bookings Proven</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     TESTIMONIALS (3 cards)
+════════════════════════════ -->
+<section class="testimonials-section">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Client Stories</div>
+      <h2 class="section-title">Straight From<br>Our Clients.</h2>
+    </div>
+    <p class="section-desc">Real feedback from the businesses we've grown.</p>
+  </div>
+  <div class="testimonials-grid">
+
+    <!-- Testimonial 1: Naqsh Resort -->
+    <div class="tcard reveal">
+      <div class="tcard-quote-mark">"</div>
+      <p class="tcard-text">The direct bookings started coming in within the first two weeks. We eliminated OTA commissions completely on those reservations. The Reels they created made the resort look like a destination.</p>
+      <div>
+        <div class="tcard-author">Naqsh Resort</div>
+        <div class="tcard-role">Premium Boutique Resort · India</div>
+        <div class="tcard-result">✦ 200+ Direct Bookings</div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2: Real Estate Client -->
+    <div class="tcard reveal reveal-delay-1">
+      <div class="tcard-quote-mark">"</div>
+      <p class="tcard-text">We were getting leads at ₹800–₹1,200 from other agencies. Vault brought it down to under ₹200 and the lead quality was actually better. ₹3 Crore in sales in just two months.</p>
+      <div>
+        <div class="tcard-author">Real Estate Developer</div>
+        <div class="tcard-role">Plot Sales · Doiwala, Dehradun</div>
+        <div class="tcard-result">✦ ₹3Cr Revenue · &lt;₹200 CPL</div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3: Glam Detailing -->
+    <div class="tcard reveal reveal-delay-2">
+      <div class="tcard-quote-mark">"</div>
+      <p class="tcard-text">I was getting bookings like crazy, not even talking to nobody. People just searched the keywords, found me on 1st or 2nd page, and they booked. The SEO completely changed my business.</p>
+      <div>
+        <div class="tcard-author">Glam Detailing</div>
+        <div class="tcard-role">Car Detailing Business · Ottawa, Canada</div>
+        <div class="tcard-result">✦ Page 1 Google Rankings</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════
+     CTA / CONTACT
+════════════════════════════ -->
+<section class="cta" id="contact">
+  <h2 class="cta-title reveal">Let's Build<br>Your <span>Next</span><br>Campaign.</h2>
+  <p class="cta-sub reveal">Drop your WhatsApp number. We'll call you within 24 hours.</p>
+  <div class="cta-form reveal">
+    <!-- Honeypot field -->
+    <input class="hp-field" type="text" id="hp_cta" name="hp_cta" tabindex="-1" autocomplete="off">
+    <input class="cta-input" type="tel" id="ctaPhone" placeholder="Your WhatsApp number" autocomplete="tel">
+    <button class="cta-btn" id="ctaSubmit">Get Free Call →</button>
+  </div>
+  <p class="cta-note reveal" id="ctaNote">Free strategy call. No commitment. No spam.</p>
+</section>
+
+<!-- ════════════════════════════
+     FOOTER
+════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Vault <span>Marketing.</span></div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+  <div class="footer-copy">© <span id="year"></span> Vault Marketing. All rights reserved.</div>
+</footer>
+
+<!-- JS separated for caching -->
+<script src="main.js"></script>
+<script>
+  // Dynamic year — never stale
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
