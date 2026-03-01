@@ -31,6 +31,21 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeModal(); } });
 
+// ── SMOOTH SCROLL WITHOUT HASH IN URL ──
+// Intercepts all anchor clicks so #services etc. never appear in the address bar
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href').slice(1);
+    if (!targetId) return;
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Keep URL clean — no #services in the address bar
+    history.replaceState(null, '', window.location.pathname);
+  });
+});
+
 // ── CUSTOM CURSOR (desktop only) ──
 const cursor   = document.getElementById('cursor');
 const follower = document.getElementById('follower');
