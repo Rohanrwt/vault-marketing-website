@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── FAVICON ── -->
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<title>OTA Commission Calculator | Vault Marketing</title>
+<meta name="description" content="Calculate exactly how much profit you are losing to OTA commissions every year, and see the ROI of direct bookings.">
+
+<!-- ── FONTS ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<!-- ── GLOBAL CSS ── -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ── CALCULATOR SPECIFIC CSS ── -->
+<style>
+  body { background: var(--black); color: var(--white); cursor: auto; }
+  .calc-container { max-width: 1100px; margin: 0 auto; padding: 120px 40px 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  
+  /* Header */
+  .calc-header { grid-column: 1 / -1; text-align: center; margin-bottom: 20px; }
+  .calc-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,77,28,0.1); color: var(--accent); padding: 8px 16px; border-radius: 100px; font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+  .calc-title { font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .calc-title span { color: var(--accent); }
+  .calc-desc { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto; }
+
+  /* Input Panel */
+  .calc-panel { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 48px; }
+  .input-group { margin-bottom: 32px; }
+  .input-group:last-child { margin-bottom: 0; }
+  .input-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 16px; }
+  .input-label { font-size: 14px; font-weight: 700; letter-spacing: 0.05em; color: rgba(255,255,255,0.8); }
+  .input-value { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--accent); background: rgba(255,77,28,0.1); padding: 4px 12px; border-radius: 8px; }
+  
+  /* Sliders */
+  input[type="range"] { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; outline: none; margin-top: 8px; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); cursor: pointer; transition: transform 0.1s; box-shadow: 0 4px 12px rgba(255,77,28,0.4); }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  
+  /* Number Input */
+  .number-input-wrap { position: relative; display: flex; align-items: center; }
+  .number-input-wrap span { position: absolute; left: 16px; font-family: var(--font-display); font-size: 20px; color: rgba(255,255,255,0.5); font-weight: 700; }
+  input[type="number"] { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px 16px 16px 40px; font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); outline: none; transition: border-color 0.2s; }
+  input[type="number"]:focus { border-color: var(--accent); }
+
+  /* Output Panel */
+  .output-panel { display: flex; flex-direction: column; gap: 24px; }
+  .result-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 48px; text-align: center; position: relative; overflow: hidden; }
+  
+  .result-card.danger { background: rgba(229, 34, 34, 0.05); border-color: rgba(229, 34, 34, 0.2); }
+  .result-card.danger::before { content: ''; position: absolute; top:0; left:0; width:100%; height:4px; background: #e52222; }
+  .result-label { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+  .result-val { font-family: var(--font-display); font-size: clamp(48px, 6vw, 72px); font-weight: 700; line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
+  .danger .result-val { color: #ff4747; }
+  
+  .result-sub { font-size: 15px; color: rgba(255,255,255,0.6); }
+
+  /* Comparison Card */
+  .comparison-card { background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.02)); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 24px; padding: 40px; }
+  .comp-label { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #000; font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
+  .comp-title { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+  .comp-desc { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+  
+  .btn-audit { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: var(--white); color: var(--black); padding: 18px 32px; border-radius: 100px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 0.2s, background 0.2s; }
+  .btn-audit:hover { background: var(--accent); color: var(--white); transform: scale(1.02); }
+
+  nav { border-bottom: 1px solid rgba(255,255,255,0.1) !important; background: rgba(13,13,13,0.95) !important; }
+  nav .logo { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .calc-container { grid-template-columns: 1fr; padding: 100px 20px 60px; gap: 40px; }
+    .calc-panel { padding: 32px 24px; }
+    .result-card { padding: 32px 24px; }
+  }
+</style>
+
+<!-- Meta Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '815520877561066');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=815520877561066&ev=PageView&noscript=1"/></noscript>
+
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar" style="position:absolute;">
+  <a href="index.html" class="logo">Vault <span>Marketing.</span></a>
+  <a href="index.html#contact" class="nav-cta" style="background:var(--white)!important; color:var(--black)!important;">Free Audit</a>
+</nav>
+
+<div class="calc-container">
+  
+  <div class="calc-header">
+    <div class="calc-badge">Free Tool</div>
+    <h1 class="calc-title">The OTA Commission <span>Bleed</span> Calculator</h1>
+    <p class="calc-desc">Calculate exactly how much pure profit your resort is losing to MakeMyTrip, Agoda, and Booking.com commissions every year.</p>
+  </div>
+
+  <!-- INPUTS -->
+  <div class="calc-panel">
+    
+    <div class="input-group">
+      <div class="input-header">
+        <div class="input-label">Total Rooms Available</div>
+        <div class="input-value" id="valRooms">15</div>
+      </div>
+      <input type="range" id="inpRooms" min="5" max="150" value="15" step="1">
+    </div>
+
+    <div class="input-group">
+      <div class="input-header">
+        <div class="input-label">Average Occupancy Rate</div>
+        <div class="input-value"><span id="valOccupancy">65</span>%</div>
+      </div>
+      <input type="range" id="inpOccupancy" min="10" max="100" value="65" step="5">
+    </div>
+
+    <div class="input-group" style="margin-top: 40px;">
+      <div class="input-header" style="margin-bottom: 12px;">
+        <div class="input-label">Average Daily Rate (ADR)</div>
+      </div>
+      <div class="number-input-wrap">
+        <span>₹</span>
+        <input type="number" id="inpADR" value="8500" min="1000" step="500">
+      </div>
+    </div>
+
+    <div class="input-group" style="margin-top: 40px;">
+      <div class="input-header">
+        <div class="input-label">% of Bookings from OTAs</div>
+        <div class="input-value"><span id="valOTA_Percentage">40</span>%</div>
+      </div>
+      <input type="range" id="inpOTA_Percentage" min="0" max="100" value="40" step="5">
+      <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-top:8px;">Percentage of your total bookings that come from aggregators.</div>
+    </div>
+
+    <div class="input-group">
+      <div class="input-header">
+        <div class="input-label">Average OTA Commission</div>
+        <div class="input-value"><span id="valCommission">18</span>%</div>
+      </div>
+      <input type="range" id="inpCommission" min="10" max="35" value="18" step="1">
+    </div>
+
+  </div>
+
+  <!-- OUTPUTS -->
+  <div class="output-panel">
+    
+    <div class="result-card danger">
+      <div class="result-label">Annual Revenue Lost to OTAs</div>
+      <div class="result-val">₹<span id="outAnnualLost">0</span></div>
+      <div class="result-sub">That is <strong style="color:#fff">₹<span id="outMonthlyLost">0</span></strong> bleeding out of your margins every single month.</div>
+    </div>
+
+    <div class="comparison-card">
+      <div class="comp-label">✦ The Vault Alternative</div>
+      <h3 class="comp-title">Stop renting your guests. <br>Start owning them.</h3>
+      <p class="comp-desc">We used Meta Ads to generate <strong>1000+ direct bookings</strong> for our own property, Naqsh Resort, completely bypassing OTA fees.</p>
+      
+      <p class="comp-desc" style="font-size: 13px; opacity: 0.8; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+        For a fraction of what you pay MakeMyTrip, you could generate predictable, commission-free direct bookings using our Meta Ads system.
+      </p>
+
+      <a href="index.html#contact" class="btn-audit">Get a Free Direct Booking Audit →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // Format Indian Rupees
+  const formatINR = (num) => {
+    return num.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+  };
+
+  const calculate = () => {
+    const rooms = parseInt(document.getElementById('inpRooms').value);
+    const occupancy = parseInt(document.getElementById('inpOccupancy').value) / 100;
+    const adr = parseInt(document.getElementById('inpADR').value) || 0;
+    const otaPercentage = parseInt(document.getElementById('inpOTA_Percentage').value) / 100;
+    const commission = parseInt(document.getElementById('inpCommission').value) / 100;
+
+    // Daily calculations
+    const occupiedRooms = rooms * occupancy;
+    const dailyRevenue = occupiedRooms * adr;
+    
+    // OTA calculations
+    const monthlyRevenue = dailyRevenue * 30;
+    const otaMonthlyRevenue = monthlyRevenue * otaPercentage;
+    const monthlyLost = otaMonthlyRevenue * commission;
+    const annualLost = monthlyLost * 12;
+
+    // Update UI
+    document.getElementById('valRooms').innerText = rooms;
+    document.getElementById('valOccupancy').innerText = (occupancy * 100).toFixed(0);
+    document.getElementById('valOTA_Percentage').innerText = (otaPercentage * 100).toFixed(0);
+    document.getElementById('valCommission').innerText = (commission * 100).toFixed(0);
+
+    // Animate numbers (simple instantaneous for now to avoid stutter on slider drag)
+    document.getElementById('outMonthlyLost').innerText = formatINR(monthlyLost);
+    document.getElementById('outAnnualLost').innerText = formatINR(annualLost);
+  };
+
+  // Event Listeners
+  const inputs = ['inpRooms', 'inpOccupancy', 'inpADR', 'inpOTA_Percentage', 'inpCommission'];
+  inputs.forEach(id => {
+    document.getElementById(id).addEventListener('input', calculate);
+  });
+
+  // Init
+  calculate();
+</script>
+
+</body>
+</html>
