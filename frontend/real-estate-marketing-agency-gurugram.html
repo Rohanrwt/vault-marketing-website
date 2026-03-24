@@ -21,6 +21,9 @@
     </script>
     <!-- End Meta Pixel Code -->
 
+    <!-- ── NOSCRIPT: Reveal elements stay visible if JS is blocked ── -->
+    <noscript><style>.reveal { opacity:1 !important; transform:none !important; }</style></noscript>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,8 +91,45 @@
     </script>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="follower"></div>
+
+    <!-- ════════════════════════════
+         LEAD MAGNET MODAL
+    ════════════════════════════ -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+
+        <!-- Form State -->
+        <div id="modalFormView">
+          <div class="modal-badge">📄 Free Download</div>
+          <h2 class="modal-title" id="modalHeading">Get Our <span>Case Study</span><br>PDF — Free</h2>
+          <p class="modal-sub">Real numbers. Real campaigns. See exactly how we generated ₹10 Crore in Real Estate revenue.</p>
+
+          <div class="modal-form">
+            <input class="hp-field" type="text" id="hp_website" name="website" tabindex="-1" autocomplete="off">
+            <div class="form-field">
+              <input class="form-input" type="text" id="leadName" placeholder="Full name">
+            </div>
+            <div class="form-field">
+              <input class="form-input" type="tel" id="leadPhone" placeholder="WhatsApp Number">
+            </div>
+            <div class="form-field">
+              <input class="form-input" type="email" id="leadEmail" placeholder="Email Address">
+            </div>
+            <button class="form-submit" id="formSubmit">Download Now ↓</button>
+          </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="modal-success" id="modalSuccessView" style="display:none;">
+          <div class="success-icon">✅</div>
+          <div class="success-title">You're all set!</div>
+          <p class="success-sub">Your case study is ready. Check your WhatsApp/Email shortly.</p>
+        </div>
+      </div>
+    </div>
 
     <nav id="navbar">
       <a href="index.html" class="logo">Vault <span>Marketing.</span></a>
@@ -99,12 +139,12 @@
         <a href="index.html#industries">Industries</a>
         <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" target="_blank" class="nav-cta">Free Audit</a>
       </div>
-      <button class="hamburger">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
 
-    <div class="mobile-menu">
+    <div class="mobile-menu" id="mobileMenu">
       <a href="index.html#results">Results</a>
       <a href="index.html#process">Process</a>
       <a href="index.html#industries">Industries</a>
