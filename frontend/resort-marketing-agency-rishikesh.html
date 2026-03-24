@@ -34,7 +34,8 @@
            connect-src 'self' https://formspree.io;
            img-src 'self' data:;">
 
-<!-- ── FONT PERFORMANCE ── -->
+<!-- ── FONT PERFORMANCE (PRELOADED) ── -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" as="style">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -68,7 +69,7 @@
 -->
 
 <!-- Meta Pixel -->
-<script>
+<script defer>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -572,7 +573,7 @@
 
 <!-- JS separated for caching -->
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 <script>
   // Dynamic year — never stale
   document.getElementById('year').textContent = new Date().getFullYear();
