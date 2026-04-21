@@ -1,1583 +1,1244 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vault Marketing — Digital Marketing for Canadian Businesses</title>
-  <meta name="description" content="SEO, Google Ads, Meta Ads, and conversion-focused websites for Canadian small businesses. Real results, honest reporting, no lock-in. Serving Calgary and all of Canada.">
-  <meta property="og:title" content="Vault Marketing — Digital Marketing for Canadian Businesses">
-  <meta property="og:description" content="Marketing that pays for itself. Real Calgary results — SEO, paid ads, and websites built to generate leads.">
-  <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Vault Marketing &mdash; Digital Marketing for Canadian Businesses | Calgary SEO &amp; Ads</title>
+    <meta name="description" content="SEO, Google Ads, Meta Ads, and conversion-focused websites for Canadian small businesses. Real results, honest reporting, no lock-in. Serving Calgary and all of Canada." />
+    <meta property="og:title" content="Vault Marketing &mdash; Digital Marketing for Canadian Businesses" />
+    <meta property="og:description" content="Marketing that pays for itself. SEO, paid ads, and websites built to generate leads for Calgary and Canadian businesses." />
+    <meta property="og:type" content="website" />
 
-  <style>
-    /* ============================================================
-       RESET
-    ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    img, svg { display: block; max-width: 100%; }
-    button { font: inherit; }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
-    /* ============================================================
-       DESIGN TOKENS
-    ============================================================ */
-    :root {
-      --bg:            #f4f1ea;
-      --bg-alt:        #ede8dc;
-      --bg-dark:       #1a1915;
-      --bg-dark-2:     #201e19;
+    <style>
+      /* ============================================================
+         RESET
+      ============================================================ */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      img, svg { display: block; max-width: 100%; }
+      button { font: inherit; }
 
-      --ink:           #1a1915;
-      --ink-muted:     #6a6560;
-      --ink-faint:     #a8a29c;
-      --ink-light:     #f4f1ea;
-      --ink-light-mid: rgba(244,241,234,0.70);
-      --ink-light-low: rgba(244,241,234,0.40);
+      /* ============================================================
+         DESIGN TOKENS
+      ============================================================ */
+      :root {
+        --bg: #f4f1ea;
+        --bg-alt: #ede8dc;
+        --bg-dark: #1a1915;
+        --bg-dark-2: #201e19;
 
-      --accent:        #c24b25;
-      --accent-dark:   #a03d1d;
-      --accent-glow:   rgba(194,75,37,0.18);
+        --ink: #1a1915;
+        --ink-muted: #6a6560;
+        --ink-faint: #a8a29c;
+        --ink-light: #f4f1ea;
+        --ink-light-mid: rgba(244, 241, 234, 0.7);
+        --ink-light-low: rgba(244, 241, 234, 0.4);
 
-      --border:        rgba(26,25,21,0.11);
-      --border-dark:   rgba(244,241,234,0.10);
+        --accent: #c24b25;
+        --accent-dark: #a03d1d;
+        --accent-glow: rgba(194, 75, 37, 0.18);
 
-      --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-      --font-sans:  'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif;
+        --border: rgba(26, 25, 21, 0.11);
+        --border-dark: rgba(244, 241, 234, 0.1);
 
-      --nav-h:    72px;
-      --pad:      clamp(1.25rem, 5vw, 3rem);
-      --max-w:    1160px;
+        --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+        --font-sans: "Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
 
-      --r-sm:   6px;
-      --r-md:   12px;
-      --r-pill: 100px;
+        --nav-h: 72px;
+        --pad: clamp(1.25rem, 5vw, 3rem);
+        --max-w: 1160px;
 
-      --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-inout:  cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        --r-sm: 6px;
+        --r-md: 12px;
+        --r-pill: 100px;
 
-    /* ============================================================
-       BASE
-    ============================================================ */
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* Noise overlay — kills "plastic" feel */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9998;
-      opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 220px 220px;
-    }
-
-    /* ============================================================
-       UTILITIES
-    ============================================================ */
-    .container {
-      max-width: var(--max-w);
-      margin-inline: auto;
-      padding-inline: var(--pad);
-    }
-
-    .section-label {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-    }
-
-    .accent-i {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.72s var(--ease-out), transform 0.72s var(--ease-out);
-    }
-    .reveal.visible            { opacity: 1; transform: translateY(0); }
-    .reveal.d1                 { transition-delay: 0.10s; }
-    .reveal.d2                 { transition-delay: 0.20s; }
-    .reveal.d3                 { transition-delay: 0.30s; }
-    .reveal.d4                 { transition-delay: 0.40s; }
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      background: transparent;
-      border-bottom: 1px solid transparent;
-      transition: background 0.35s var(--ease-inout),
-                  border-color 0.35s var(--ease-inout),
-                  backdrop-filter 0.35s;
-    }
-    .nav.scrolled {
-      background: rgba(244,241,234,0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom-color: var(--border);
-    }
-    .nav__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-    .nav__logo {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      letter-spacing: -0.01em;
-    }
-    .nav__logo-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .nav__links {
-      display: none;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-    @media (min-width: 768px) { .nav__links { display: flex; } }
-    .nav__links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav__links a:hover { color: var(--accent); }
-
-    .nav__cta {
-      display: none;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--ink);
-      color: var(--ink-light);
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.55rem 1.2rem;
-      border-radius: var(--r-pill);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    @media (min-width: 560px) { .nav__cta { display: inline-flex; } }
-    .nav__cta:hover { background: var(--accent); }
-
-    .nav__cta-mobile {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: var(--ink);
-      color: var(--ink-light);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.5rem 0.9rem;
-      border-radius: var(--r-pill);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    @media (min-width: 560px) { .nav__cta-mobile { display: none; } }
-    .nav__cta-mobile:hover { background: var(--accent); }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    .hero {
-      padding-top:    calc(var(--nav-h) + clamp(3.5rem, 11vw, 7rem));
-      padding-bottom: clamp(4.5rem, 12vw, 9rem);
-    }
-    .hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(26,25,21,0.06);
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      padding: 0.38rem 0.95rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-      margin-bottom: 2rem;
-    }
-    .hero__eyebrow-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      animation: dot-pulse 2.2s ease-in-out infinite;
-    }
-    @keyframes dot-pulse {
-      0%,100% { opacity:1; transform:scale(1); }
-      50%      { opacity:0.55; transform:scale(0.75); }
-    }
-    .hero__h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.022em;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-      max-width: 850px;
-    }
-    .hero__sub {
-      font-size: clamp(1rem, 1.8vw, 1.15rem);
-      line-height: 1.7;
-      color: var(--ink-muted);
-      max-width: 540px;
-      margin-bottom: 2.5rem;
-    }
-    .hero__ctas {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    /* Primary dark pill button */
-    .btn-dark {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: var(--ink);
-      color: var(--ink-light);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 0.85rem 1.75rem;
-      border-radius: var(--r-pill);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-dark .arrow { display:inline-block; transition: transform 0.25s var(--ease-out); }
-    .btn-dark:hover  { background: var(--accent); }
-    .btn-dark:hover .arrow { transform: translateX(5px); }
-
-    /* Accent pill button */
-    .btn-accent {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: var(--accent);
-      color: #fff;
-      font-family: var(--font-sans);
-      font-size: 1.05rem;
-      font-weight: 600;
-      padding: 0.95rem 2rem;
-      border-radius: var(--r-pill);
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-accent .arrow { display:inline-block; transition: transform 0.25s var(--ease-out); }
-    .btn-accent:hover  { background: var(--accent-dark); }
-    .btn-accent:hover .arrow { transform: translateX(5px); }
-
-    .link-underline {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 1px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .link-underline:hover { color: var(--accent); border-color: var(--accent); }
-
-    .hero__trusted {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .hero__trusted-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-    .hero__trusted-sep { color: var(--ink-faint); }
-    .hero__trusted-names {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--ink-muted);
-    }
-
-    /* ============================================================
-       MARQUEE
-    ============================================================ */
-    .marquee-wrap {
-      background: var(--bg-dark);
-      padding-block: 1.2rem;
-      overflow: hidden;
-      position: relative;
-    }
-    .marquee-wrap::before,
-    .marquee-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 6rem;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .marquee-wrap::before { left:0;  background: linear-gradient(to right, var(--bg-dark), transparent); }
-    .marquee-wrap::after  { right:0; background: linear-gradient(to left,  var(--bg-dark), transparent); }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      will-change: transform;
-      animation: marquee-run 28s linear infinite;
-    }
-    .marquee-track:hover { animation-play-state: paused; }
-    @keyframes marquee-run {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    .marquee-set {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      flex-shrink: 0;
-    }
-    .marquee-set span {
-      white-space: nowrap;
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      color: rgba(244,241,234,0.62);
-      padding-inline: 1.5rem;
-    }
-    .marquee-set .orn {
-      color: var(--accent);
-      font-size: 0.65rem;
-      padding-inline: 0;
-      opacity: 0.9;
-    }
-
-    /* ============================================================
-       PROBLEM SECTION
-    ============================================================ */
-    .problem {
-      padding-block: clamp(5rem, 12vw, 9rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .problem__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    @media (min-width: 768px) {
-      .problem__grid {
-        grid-template-columns: 1fr 1.45fr;
-        gap: 5.5rem;
-        align-items: start;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
       }
-    }
-    .problem__label { margin-bottom: 1.25rem; }
-    .problem__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.18;
-      letter-spacing: -0.016em;
-      color: var(--ink);
-    }
-    .problem__intro {
-      font-size: 1.02rem;
-      color: var(--ink-muted);
-      line-height: 1.72;
-      margin-bottom: 1.75rem;
-    }
-    .problem__list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .problem__item {
-      display: flex;
-      gap: 0.8rem;
-      align-items: flex-start;
-      font-size: 1rem;
-      line-height: 1.62;
-    }
-    .problem__dash {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 1.05rem;
-      line-height: 1.62;
-      flex-shrink: 0;
-      user-select: none;
-    }
-    .problem__close {
-      margin-top: 2rem;
-      padding-top: 1.75rem;
-      border-top: 1px solid var(--border);
-      font-size: 1.02rem;
-      line-height: 1.7;
-      color: var(--ink-muted);
-    }
-    .problem__close strong { color: var(--ink); font-weight: 600; }
 
-    /* ============================================================
-       SERVICES
-    ============================================================ */
-    .services {
-      padding-block: clamp(5rem, 12vw, 9rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .services__hdr { margin-bottom: 4rem; }
-    .services__hdr .section-label { margin-bottom: 1rem; }
-    .services__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      letter-spacing: -0.016em;
-      line-height: 1.2;
-    }
-    .services__cols {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-    @media (min-width: 768px) {
-      .services__cols { grid-template-columns: repeat(3,1fr); }
-    }
-    .svc {
-      padding: 0 0 2.5rem;
-      border-top: 1px solid var(--border);
-      margin-top: 2.5rem;
-      transition: background 0.22s;
-    }
-    @media (min-width: 768px) {
-      .svc {
-        padding: 0 2.25rem 0;
-        border-top: none;
-        border-left: 1px solid var(--border);
-        margin-top: 0;
+      /* ============================================================
+         BASE
+      ============================================================ */
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
-      .svc:first-child { border-left: none; padding-left: 0; }
-      .svc:last-child  { padding-right: 0; }
-    }
-    .svc__lbl {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.82rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .svc__h3 {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-      color: var(--ink);
-      margin-bottom: 0.8rem;
-    }
-    .svc__desc {
-      font-size: 0.93rem;
-      color: var(--ink-muted);
-      line-height: 1.68;
-      margin-bottom: 1.5rem;
-    }
-    .svc__bullets { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .svc__bullet  {
-      display: flex;
-      gap: 0.55rem;
-      align-items: flex-start;
-      font-size: 0.88rem;
-      color: var(--ink-muted);
-      line-height: 1.5;
-    }
-    .svc__bullet-dash { color: var(--accent); font-weight: 700; flex-shrink: 0; user-select: none; }
 
-    /* ============================================================
-       CASE STUDIES
-    ============================================================ */
-    .work {
-      background: var(--bg-dark);
-      padding-block: clamp(5rem, 12vw, 9rem);
-      position: relative;
-      overflow: hidden;
-    }
-    .work__hdr { margin-bottom: 3.5rem; }
-    .work__hdr .section-label { color: var(--ink-light-low); margin-bottom: 1rem; }
-    .work__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      letter-spacing: -0.016em;
-      line-height: 1.2;
-      color: var(--ink-light);
-    }
-    .work__cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    @media (min-width: 768px) {
-      .work__cards { grid-template-columns: repeat(2,1fr); gap: 2rem; }
-    }
-    .case-card {
-      background: rgba(244,241,234,0.04);
-      border: 1px solid var(--border-dark);
-      border-radius: var(--r-md);
-      padding: clamp(1.75rem, 4vw, 2.5rem);
-    }
-    .case-card__location {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-light-low);
-      margin-bottom: 1.75rem;
-    }
-    .case-card__stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border-dark);
-    }
-    .stat__num {
-      font-family: var(--font-serif);
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      color: var(--accent);
-      margin-bottom: 0.35rem;
-    }
-    .stat__lbl {
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--ink-light-low);
-    }
-
-    /*
-      VIDEO SWAP ZONE — see comment below each .case-card__testimonial.
-      When video testimonials are ready, replace the entire
-      .case-card__testimonial div with a <video> element:
-
-      <video controls poster="[THUMB_URL]" style="width:100%;border-radius:6px;margin-top:0.5rem">
-        <source src="[VIDEO_URL]" type="video/mp4">
-      </video>
-    */
-    .case-card__testimonial {
-      padding-left: 1.1rem;
-      border-left: 2px solid var(--accent);
-    }
-    .case-card__quote {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: var(--ink-light-mid);
-      margin-bottom: 0.85rem;
-    }
-    .case-card__author {
-      font-size: 0.82rem;
-      color: var(--ink-light-low);
-    }
-
-    /* ============================================================
-       PROCESS
-    ============================================================ */
-    .process {
-      padding-block: clamp(5rem, 12vw, 9rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .process__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    @media (min-width: 768px) {
-      .process__grid {
-        grid-template-columns: 1fr 1.55fr;
-        gap: 6rem;
-        align-items: start;
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.032;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 220px 220px;
       }
-    }
-    .process__lbl { margin-bottom: 1.25rem; }
-    .process__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 600;
-      letter-spacing: -0.016em;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .process__support {
-      font-size: 0.97rem;
-      color: var(--ink-muted);
-      line-height: 1.68;
-    }
-    .process__steps { list-style: none; display: flex; flex-direction: column; }
-    .step {
-      display: grid;
-      grid-template-columns: 2.75rem 1fr;
-      gap: 1.25rem;
-      align-items: flex-start;
-      padding-block: 1.75rem;
-      border-bottom: 1px solid var(--border);
-      cursor: default;
-      transition: transform 0.25s var(--ease-out);
-    }
-    .step:first-child { padding-top: 0; }
-    .step:last-child  { border-bottom: none; }
-    .step:hover       { transform: translateX(7px); }
-    .step__num {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      opacity: 0.88;
-    }
-    .step__h3 {
-      font-family: var(--font-serif);
-      font-size: 1.12rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 0.35rem;
-    }
-    .step__desc {
-      font-size: 0.93rem;
-      color: var(--ink-muted);
-      line-height: 1.68;
-    }
 
-    /* ============================================================
-       WHY US
-    ============================================================ */
-    .why {
-      background: var(--bg-alt);
-      padding-block: clamp(5rem, 12vw, 9rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .why__hdr { margin-bottom: 3.5rem; }
-    .why__hdr .section-label { margin-bottom: 1rem; }
-    .why__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      letter-spacing: -0.016em;
-      line-height: 1.2;
-    }
-    .why__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    @media (min-width: 600px) { .why__grid { grid-template-columns: repeat(2,1fr); } }
-    .why-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 1.85rem 1.75rem;
-    }
-    .why-card__num {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.88rem;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 0.85rem;
-    }
-    .why-card__h3 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 0.55rem;
-    }
-    .why-card__p {
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-      line-height: 1.68;
-    }
+      /* ============================================================
+         UTILITIES
+      ============================================================ */
+      .container {
+        max-width: var(--max-w);
+        margin-inline: auto;
+        padding-inline: var(--pad);
+      }
 
-    /* ============================================================
-       FAQ
-    ============================================================ */
-    .faq { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
-    .faq__hdr { text-align: center; margin-bottom: 3.5rem; }
-    .faq__hdr .section-label { margin-bottom: 1rem; }
-    .faq__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      letter-spacing: -0.016em;
-      line-height: 1.2;
-    }
-    .faq__list {
-      max-width: 700px;
-      margin-inline: auto;
-    }
-    .faq-item { border-top: 1px solid var(--border); }
-    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+      .section-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+      }
 
-    .faq-item__btn {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 1.45rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      font-family: var(--font-sans);
-      font-size: 0.97rem;
-      font-weight: 600;
-      color: var(--ink);
-      transition: color 0.2s;
-    }
-    .faq-item__btn:hover { color: var(--accent); }
+      .accent-i { font-style: italic; color: var(--accent); }
 
-    .faq-icon {
-      width: 22px; height: 22px;
-      flex-shrink: 0;
-      position: relative;
-      border: 1.5px solid var(--border);
-      border-radius: 50%;
-      transition: border-color 0.2s, transform 0.32s var(--ease-out);
-    }
-    .faq-icon::before,
-    .faq-icon::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      background: currentColor;
-    }
-    .faq-icon::before { width: 9px; height: 1.5px; }
-    .faq-icon::after  {
-      width: 1.5px; height: 9px;
-      transition: transform 0.32s var(--ease-out);
-    }
-    .faq-item.open .faq-icon { border-color: var(--accent); transform: rotate(45deg); }
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.72s var(--ease-out), transform 0.72s var(--ease-out);
+      }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .reveal.d1 { transition-delay: 0.1s; }
+      .reveal.d2 { transition-delay: 0.2s; }
+      .reveal.d3 { transition-delay: 0.3s; }
+      .reveal.d4 { transition-delay: 0.4s; }
 
-    .faq-item__body {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.42s var(--ease-out);
-    }
-    .faq-item.open .faq-item__body { max-height: 400px; }
-    .faq-item__ans {
-      padding-bottom: 1.5rem;
-      font-size: 0.95rem;
-      color: var(--ink-muted);
-      line-height: 1.72;
-    }
+      /* ============================================================
+         NAVIGATION
+      ============================================================ */
+      .nav {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+        height: var(--nav-h);
+        display: flex; align-items: center;
+        background: transparent;
+        border-bottom: 1px solid transparent;
+        transition: background 0.35s var(--ease-inout), border-color 0.35s var(--ease-inout), backdrop-filter 0.35s;
+      }
+      .nav.scrolled {
+        background: rgba(244, 241, 234, 0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom-color: var(--border);
+      }
+      .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+      .nav__logo {
+        font-family: var(--font-serif);
+        font-size: 1.2rem; font-weight: 600;
+        color: var(--ink); text-decoration: none;
+        display: flex; align-items: center; gap: 3px; letter-spacing: -0.01em;
+      }
+      .nav__logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+      .nav__links { display: none; list-style: none; gap: 2rem; align-items: center; }
+      @media (min-width: 768px) { .nav__links { display: flex; } }
+      .nav__links a { font-size: 0.875rem; font-weight: 500; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+      .nav__links a:hover { color: var(--accent); }
+      .nav__actions { display: flex; align-items: center; gap: 0.9rem; }
+      .nav__proof {
+        display: none; align-items: center; gap: 0.7rem;
+        padding: 0.55rem 0.9rem; border: 1px solid var(--border); border-radius: var(--r-pill);
+        background: rgba(244, 241, 234, 0.62); color: var(--ink-muted);
+        font-size: 0.73rem; line-height: 1.2; white-space: nowrap;
+      }
+      @media (min-width: 980px) { .nav__proof { display: inline-flex; } }
+      .nav__proof-stat { color: var(--accent); font-family: var(--font-serif); font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; }
+      .nav__cta {
+        display: none; align-items: center; gap: 0.4rem;
+        background: var(--ink); color: var(--ink-light);
+        font-size: 0.85rem; font-weight: 600;
+        padding: 0.55rem 1.2rem; border-radius: var(--r-pill);
+        text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+      }
+      @media (min-width: 560px) { .nav__cta { display: inline-flex; } }
+      .nav__cta:hover { background: var(--accent); }
+      .nav__cta-copy { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.05; }
+      .nav__cta-copy small { font-size: 0.64rem; font-weight: 500; color: rgba(244,241,234,0.78); margin-top: 0.18rem; }
+      .nav__cta-mobile {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: var(--ink); color: var(--ink-light);
+        font-size: 0.8rem; font-weight: 600;
+        padding: 0.5rem 0.9rem; border-radius: var(--r-pill);
+        text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+      }
+      @media (min-width: 560px) { .nav__cta-mobile { display: none; } }
+      .nav__cta-mobile:hover { background: var(--accent); }
 
-    /* ============================================================
-       FINAL CTA
-    ============================================================ */
-    .final-cta {
-      background: var(--bg-dark);
-      padding-block: clamp(5rem, 12vw, 9rem);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Soft radial glow from top-right corner */
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      top: -15%; right: -8%;
-      width: 55vw; height: 55vw;
-      max-width: 640px; max-height: 640px;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
-      pointer-events: none;
-    }
-    .final-cta__inner { position: relative; z-index: 1; }
-    .final-cta__lbl {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--ink-light-low);
-      margin-bottom: 1.5rem;
-    }
-    .final-cta__h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.1rem, 5.5vw, 3.75rem);
-      font-weight: 700;
-      letter-spacing: -0.022em;
-      line-height: 1.1;
-      color: var(--ink-light);
-      margin-bottom: 1.25rem;
-    }
-    .final-cta__sub {
-      font-size: 1.02rem;
-      color: var(--ink-light-mid);
-      line-height: 1.68;
-      max-width: 500px;
-      margin-inline: auto;
-      margin-bottom: 2.5rem;
-    }
-    .final-cta__btn-wrap { margin-bottom: 1.5rem; }
-    .final-cta__checks {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.5rem;
-      font-size: 0.8rem;
-      color: var(--ink-light-low);
-    }
-    .final-cta__check::before { content: '✓'; color: var(--accent); margin-right: 0.35rem; font-weight: 700; }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    .footer {
-      background: var(--bg-dark);
-      border-top: 1px solid rgba(244,241,234,0.07);
-      padding-block: 3rem 2rem;
-    }
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-bottom: 3rem;
-    }
-    @media (min-width: 600px) {
-      .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
-    }
-    .footer__logo {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--ink-light);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      margin-bottom: 0.75rem;
-    }
-    .footer__logo .dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-    .footer__blurb {
-      font-size: 0.88rem;
-      color: var(--ink-light-mid);
-      line-height: 1.68;
-      max-width: 260px;
-    }
-    .footer__col-h {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-light-low);
-      margin-bottom: 1rem;
-    }
-    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer__links a {
-      font-size: 0.88rem;
-      color: var(--ink-light-mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer__links a:hover { color: var(--ink-light); }
-    .footer__bottom {
-      border-top: 1px solid rgba(244,241,234,0.07);
-      padding-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .footer__copy,
-    .footer__note {
-      font-size: 0.78rem;
-      color: rgba(244,241,234,0.28);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ============================================================
-       NAVIGATION
-  ============================================================ -->
-  <nav class="nav" id="nav" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav__inner">
-
-        <a href="#home" class="nav__logo" aria-label="Vault Marketing — home">
-          Vault Marketing<span class="nav__logo-dot" aria-hidden="true"></span>
-        </a>
-
-        <ul class="nav__links" role="list">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-
-        <a href="[CALENDLY_LINK_PLACEHOLDER]" class="nav__cta" target="_blank" rel="noopener noreferrer">
-          Book a call <span class="arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="[CALENDLY_LINK_PLACEHOLDER]" class="nav__cta-mobile" target="_blank" rel="noopener noreferrer">
-          Book a call
-        </a>
-
-      </div>
-    </div>
-  </nav>
-
-  <main id="main">
-
-    <!-- ============================================================
+      /* ============================================================
          HERO
-    ============================================================ -->
-    <section class="hero" id="home" aria-label="Hero">
-      <div class="container">
+      ============================================================ */
+      .hero {
+        padding-top: calc(var(--nav-h) + clamp(3.5rem, 11vw, 7rem));
+        padding-bottom: clamp(4.5rem, 12vw, 9rem);
+      }
+      .hero__eyebrow {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        background: rgba(26,25,21,0.06); border: 1px solid var(--border); border-radius: var(--r-pill);
+        padding: 0.38rem 0.95rem; font-size: 0.78rem; font-weight: 500; color: var(--ink-muted); margin-bottom: 2rem;
+      }
+      .hero__eyebrow-dot {
+        width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0;
+        animation: dot-pulse 2.2s ease-in-out infinite;
+      }
+      @keyframes dot-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.55; transform: scale(0.75); }
+      }
+      .hero__h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(2.6rem, 6.5vw, 5.2rem); font-weight: 700;
+        line-height: 1.08; letter-spacing: -0.022em;
+        color: var(--ink); margin-bottom: 1.5rem; max-width: 850px;
+      }
+      .hero__sub { font-size: clamp(1rem, 1.8vw, 1.15rem); line-height: 1.7; color: var(--ink-muted); max-width: 540px; margin-bottom: 2.5rem; }
+      .hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-bottom: 3rem; }
 
-        <div class="reveal">
-          <span class="hero__eyebrow">
-            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-            Now serving Calgary &amp; all of Canada
-          </span>
-        </div>
+      .btn-dark {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        background: var(--ink); color: var(--ink-light);
+        font-size: 1rem; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: var(--r-pill);
+        text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+      }
+      .btn-dark .arrow { display: inline-block; transition: transform 0.25s var(--ease-out); }
+      .btn-dark:hover { background: var(--accent); }
+      .btn-dark:hover .arrow { transform: translateX(5px); }
 
-        <h1 class="hero__h1 reveal d1">
-          Marketing that pays<br>for itself.
-          <em class="accent-i">Built for<br>Canadian businesses.</em>
-        </h1>
+      .btn-accent {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        background: var(--accent); color: #fff;
+        font-size: 1.05rem; font-weight: 600; padding: 0.95rem 2rem; border-radius: var(--r-pill);
+        text-decoration: none; border: none; cursor: pointer; transition: background 0.2s;
+      }
+      .btn-accent .arrow { display: inline-block; transition: transform 0.25s var(--ease-out); }
+      .btn-accent:hover { background: var(--accent-dark); }
+      .btn-accent:hover .arrow { transform: translateX(5px); }
 
-        <p class="hero__sub reveal d2">
-          SEO, Google &amp; Meta ads, and conversion-focused websites. Run by a team that treats your ad spend like our own. No jargon, no monthly dashboards nobody reads. Just leads, calls, and bookings.
-        </p>
+      .link-underline {
+        font-size: 0.95rem; font-weight: 500; color: var(--ink);
+        text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px;
+        transition: color 0.2s, border-color 0.2s;
+      }
+      .link-underline:hover { color: var(--accent); border-color: var(--accent); }
 
-        <div class="hero__ctas reveal d3">
-          <a href="[CALENDLY_LINK_PLACEHOLDER]" class="btn-dark" target="_blank" rel="noopener noreferrer">
-            Book a free strategy call <span class="arrow" aria-hidden="true">→</span>
-          </a>
-          <a href="#work" class="link-underline">See our Calgary results</a>
-        </div>
+      .hero__trusted { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+      .hero__trusted-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-faint); }
+      .hero__trusted-sep { color: var(--ink-faint); }
+      .hero__trusted-names { font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; color: var(--ink-muted); }
 
-        <div class="hero__trusted reveal d4">
-          <span class="hero__trusted-label">Trusted by</span>
-          <span class="hero__trusted-names">
-            <em>Adspotless</em><span class="hero__trusted-sep"> · </span><em>Glam Detailing</em>
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
+      /* ============================================================
          MARQUEE
-    ============================================================ -->
-    <div class="marquee-wrap" aria-hidden="true" role="presentation">
-      <div class="marquee-track">
-        <!-- Set 1 -->
-        <div class="marquee-set">
-          <span>SEO that ranks</span><span class="orn">✦</span>
-          <span>Google Ads that convert</span><span class="orn">✦</span>
-          <span>Meta Ads with real ROAS</span><span class="orn">✦</span>
-          <span>Websites that sell</span><span class="orn">✦</span>
-          <span>Honest reporting, always</span><span class="orn">✦</span>
-          <span>Real humans, real results</span><span class="orn">✦</span>
-          <span>No lock-in contracts</span><span class="orn">✦</span>
-          <span>Founder-led service</span><span class="orn">✦</span>
-          <span>Calgary-tested playbook</span><span class="orn">✦</span>
-        </div>
-        <!-- Set 2 — duplicate for seamless loop -->
-        <div class="marquee-set" aria-hidden="true">
-          <span>SEO that ranks</span><span class="orn">✦</span>
-          <span>Google Ads that convert</span><span class="orn">✦</span>
-          <span>Meta Ads with real ROAS</span><span class="orn">✦</span>
-          <span>Websites that sell</span><span class="orn">✦</span>
-          <span>Honest reporting, always</span><span class="orn">✦</span>
-          <span>Real humans, real results</span><span class="orn">✦</span>
-          <span>No lock-in contracts</span><span class="orn">✦</span>
-          <span>Founder-led service</span><span class="orn">✦</span>
-          <span>Calgary-tested playbook</span><span class="orn">✦</span>
-        </div>
-      </div>
-    </div>
+      ============================================================ */
+      .marquee-wrap { background: var(--bg-dark); padding-block: 1.2rem; overflow: hidden; position: relative; }
+      .marquee-wrap::before, .marquee-wrap::after {
+        content: ""; position: absolute; top: 0; bottom: 0; width: 6rem; z-index: 2; pointer-events: none;
+      }
+      .marquee-wrap::before { left: 0; background: linear-gradient(to right, var(--bg-dark), transparent); }
+      .marquee-wrap::after { right: 0; background: linear-gradient(to left, var(--bg-dark), transparent); }
+      .marquee-track { display: flex; width: max-content; will-change: transform; animation: marquee-run 28s linear infinite; }
+      .marquee-track:hover { animation-play-state: paused; }
+      @keyframes marquee-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      .marquee-set { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
+      .marquee-set span { white-space: nowrap; font-family: var(--font-serif); font-size: 0.95rem; color: rgba(244,241,234,0.62); padding-inline: 1.5rem; }
+      .marquee-set .orn { color: var(--accent); font-size: 0.65rem; padding-inline: 0; opacity: 0.9; }
 
-    <!-- ============================================================
+      /* ============================================================
          PROBLEM SECTION
-    ============================================================ -->
-    <section class="problem" id="problem" aria-label="The honest truth">
-      <div class="container">
-        <div class="problem__grid">
+      ============================================================ */
+      .problem { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .problem__grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+      @media (min-width: 768px) { .problem__grid { grid-template-columns: 1fr 1.45fr; gap: 5.5rem; align-items: start; } }
+      .problem__label { margin-bottom: 1.25rem; }
+      .problem__h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.016em; color: var(--ink); }
+      .problem__intro { font-size: 1.02rem; color: var(--ink-muted); line-height: 1.72; margin-bottom: 1.75rem; }
+      .problem__list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+      .problem__item { display: flex; gap: 0.8rem; align-items: flex-start; font-size: 1rem; line-height: 1.62; }
+      .problem__dash { color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 0.1em; }
+      .problem__cta { margin-top: 0.5rem; }
 
+      /* ============================================================
+         SERVICES SECTION
+      ============================================================ */
+      .services { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .services__label { margin-bottom: 1.5rem; }
+      .services__h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: var(--ink); margin-bottom: clamp(2.5rem, 6vw, 4.5rem); max-width: 680px; }
+      .services__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+      @media (min-width: 640px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .services__grid { grid-template-columns: repeat(3, 1fr); } }
+      .service-card {
+        background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md);
+        padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column; gap: 1rem;
+        transition: box-shadow 0.25s, transform 0.25s;
+      }
+      .service-card:hover { box-shadow: 0 8px 32px rgba(26,25,21,0.09); transform: translateY(-3px); }
+      .service-card__num { font-family: var(--font-serif); font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.06em; }
+      .service-card__title { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+      .service-card__body { font-size: 0.93rem; color: var(--ink-muted); line-height: 1.7; flex: 1; }
+      .service-card__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+      .tag {
+        font-size: 0.7rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+        padding: 0.28rem 0.65rem; border-radius: var(--r-pill);
+        border: 1px solid var(--border); color: var(--ink-muted); background: var(--bg);
+      }
+
+      /* ============================================================
+         STATS SECTION
+      ============================================================ */
+      .stats { background: var(--bg-dark); padding-block: clamp(5rem, 12vw, 9rem); }
+      .stats__head { margin-bottom: clamp(3rem, 7vw, 5rem); }
+      .stats__label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(244,241,234,0.4); margin-bottom: 1.1rem; }
+      .stats__h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: var(--ink-light); }
+      .stats__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      @media (min-width: 768px) { .stats__grid { grid-template-columns: repeat(4, 1fr); } }
+      .stat-card { background: var(--bg-dark-2); border: 1px solid var(--border-dark); border-radius: var(--r-md); padding: clamp(1.25rem, 2.5vw, 2rem); }
+      .stat-card__num { font-family: var(--font-serif); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; letter-spacing: -0.03em; color: var(--accent); line-height: 1; margin-bottom: 0.6rem; }
+      .stat-card__label { font-size: 0.85rem; color: var(--ink-light-mid); line-height: 1.5; }
+      .stats__quote { margin-top: 3.5rem; padding: 2rem 2.25rem; background: rgba(194,75,37,0.07); border: 1px solid rgba(194,75,37,0.22); border-radius: var(--r-md); }
+      .stats__quote p { font-family: var(--font-serif); font-size: clamp(1.1rem, 2.2vw, 1.4rem); font-style: italic; color: var(--ink-light); line-height: 1.62; }
+
+      /* ============================================================
+         TESTIMONIALS SECTION
+      ============================================================ */
+      .testimonials { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .testimonials__head { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+      .testimonials__label { margin-bottom: 1rem; }
+      .testimonials__h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: var(--ink); }
+      .testimonials__grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+      @media (min-width: 640px) { .testimonials__grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
+      .testi-card {
+        background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md);
+        padding: clamp(1.5rem, 2.5vw, 2rem); display: flex; flex-direction: column; gap: 1.25rem;
+      }
+      .testi-card__stars { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.04em; }
+      .testi-card__body { font-family: var(--font-serif); font-size: 1.02rem; font-style: italic; color: var(--ink); line-height: 1.68; flex: 1; }
+      .testi-card__footer { display: flex; align-items: center; gap: 0.9rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+      .testi-card__avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-dark); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-weight: 600; color: var(--ink-light); font-size: 1rem; flex-shrink: 0; }
+      .testi-card__name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+      .testi-card__role { font-size: 0.78rem; color: var(--ink-muted); }
+      .testi-card__result { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(194,75,37,0.08); border: 1px solid rgba(194,75,37,0.18); border-radius: var(--r-pill); padding: 0.28rem 0.7rem; font-size: 0.73rem; font-weight: 600; color: var(--accent); margin-top: 0.5rem; width: fit-content; }
+
+      /* ============================================================
+         PROCESS SECTION
+      ============================================================ */
+      .process { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .process__grid { display: grid; grid-template-columns: 1fr; gap: 3.5rem; }
+      @media (min-width: 768px) { .process__grid { grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; } }
+      .process__label { margin-bottom: 1.25rem; }
+      .process__tagline { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.016em; color: var(--ink); }
+      .process__tagline em { font-style: italic; color: var(--accent); display: block; }
+      .process__note { font-size: 0.93rem; color: var(--ink-muted); margin-top: 1.25rem; line-height: 1.7; }
+      .process__steps { display: flex; flex-direction: column; gap: 0; }
+      .process__step { display: flex; gap: 1.5rem; padding-block: 2rem; border-bottom: 1px solid var(--border); }
+      .process__step:first-child { padding-top: 0; }
+      .process__step:last-child { border-bottom: none; }
+      .process__step-num { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; color: var(--accent); line-height: 1; flex-shrink: 0; width: 2.8rem; }
+      .process__step-body { flex: 1; }
+      .process__step-title { font-family: var(--font-serif); font-size: 1.12rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+      .process__step-text { font-size: 0.93rem; color: var(--ink-muted); line-height: 1.7; }
+
+      /* ============================================================
+         DIFFERENTIATORS (ACCORDION)
+      ============================================================ */
+      .diff { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .diff__h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: var(--ink); margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+      .diff__list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+
+      .diff__btn {
+        width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+        padding-block: 1.6rem; background: none; border: none; border-bottom: 1px solid var(--border);
+        cursor: pointer; text-align: left;
+        transition: color 0.2s;
+      }
+      .diff__btn:hover .diff__btn-title { color: var(--accent); }
+      .diff__btn-title { font-family: var(--font-serif); font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; color: var(--ink); }
+      .diff__chevron { flex-shrink: 0; width: 20px; height: 20px; transition: transform 0.3s var(--ease-out); }
+      .diff__item.open .diff__chevron { transform: rotate(180deg); }
+      .diff__body { display: none; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
+      .diff__item.open .diff__body { display: block; }
+      .diff__body p { font-size: 0.97rem; color: var(--ink-muted); line-height: 1.72; max-width: 760px; }
+
+      /* ============================================================
+         CONTACT FORM SECTION
+      ============================================================ */
+      .contact-section {
+        padding-block: clamp(5rem, 12vw, 9rem);
+        background: var(--bg-alt);
+        border-bottom: 1px solid var(--border);
+      }
+      .contact-section__inner {
+        display: grid; grid-template-columns: 1fr; gap: 3.5rem;
+      }
+      @media (min-width: 768px) {
+        .contact-section__inner { grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+      }
+      .contact-section__label { margin-bottom: 1rem; }
+      .contact-section__h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.016em; color: var(--ink); margin-bottom: 1.25rem; }
+      .contact-section__sub { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; margin-bottom: 2rem; }
+      .contact-perks { display: flex; flex-direction: column; gap: 1rem; }
+      .contact-perk { display: flex; align-items: flex-start; gap: 0.75rem; }
+      .contact-perk__icon { width: 22px; height: 22px; border-radius: 50%; background: rgba(194,75,37,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1em; }
+      .contact-perk__icon svg { width: 12px; height: 12px; }
+      .contact-perk__text { font-size: 0.93rem; color: var(--ink-muted); line-height: 1.6; }
+      .contact-perk__text strong { color: var(--ink); }
+
+      /* Form */
+      .contact-form { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-md); padding: clamp(1.75rem, 4vw, 2.5rem); }
+      .form-row { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+      @media (min-width: 520px) { .form-row.two-col { grid-template-columns: 1fr 1fr; } }
+      .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+      .form-label { font-size: 0.82rem; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+      .form-input, .form-select, .form-textarea {
+        background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-sm);
+        padding: 0.7rem 0.95rem; font-family: var(--font-sans); font-size: 0.93rem; color: var(--ink);
+        transition: border-color 0.2s, box-shadow 0.2s; outline: none; width: 100%;
+      }
+      .form-input:focus, .form-select:focus, .form-textarea:focus {
+        border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow);
+      }
+      .form-textarea { resize: vertical; min-height: 110px; }
+      .form-select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a6560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.95rem center; padding-right: 2.5rem; }
+      .form-submit { width: 100%; margin-top: 0.5rem; }
+      .form-note { font-size: 0.78rem; color: var(--ink-faint); text-align: center; margin-top: 0.75rem; }
+      .form-success { display: none; text-align: center; padding: 2rem; }
+      .form-success.visible { display: block; }
+      .form-success__icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+      .form-success__title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+      .form-success__text { font-size: 0.93rem; color: var(--ink-muted); }
+
+
+      /* ============================================================
+         FAQ SECTION
+      ============================================================ */
+      .faq { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+      .faq__h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 600; line-height: 1.14; letter-spacing: -0.02em; color: var(--ink); margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+      .faq__list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); max-width: 820px; }
+
+      .faq__btn {
+        width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+        padding-block: 1.4rem; background: none; border: none; border-bottom: 1px solid var(--border);
+        cursor: pointer; text-align: left;
+      }
+      .faq__btn:hover .faq__q { color: var(--accent); }
+      .faq__q { font-size: clamp(0.97rem, 1.8vw, 1.07rem); font-weight: 500; color: var(--ink); }
+      .faq__chevron { flex-shrink: 0; width: 20px; height: 20px; transition: transform 0.3s var(--ease-out); }
+      .faq__item.open .faq__chevron { transform: rotate(180deg); }
+      .faq__answer { display: none; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+      .faq__item.open .faq__answer { display: block; }
+      .faq__answer p { font-size: 0.95rem; color: var(--ink-muted); line-height: 1.72; }
+
+      /* ============================================================
+         FINAL CTA SECTION
+      ============================================================ */
+      .cta-final { background: var(--bg-dark); padding-block: clamp(5.5rem, 13vw, 10rem); text-align: center; position: relative; overflow: hidden; }
+      .cta-final::before {
+        content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+        width: 700px; height: 260px;
+        background: radial-gradient(ellipse at bottom, rgba(194,75,37,0.18) 0%, transparent 68%);
+        pointer-events: none;
+      }
+      .cta-final__label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(244,241,234,0.4); margin-bottom: 1.5rem; }
+      .cta-final__h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.024em; color: var(--ink-light); margin-bottom: 0.75rem; }
+      .cta-final__h2 em { font-style: italic; color: var(--accent); }
+      .cta-final__sub { font-size: clamp(0.97rem, 1.8vw, 1.1rem); color: var(--ink-light-mid); max-width: 520px; margin-inline: auto; margin-bottom: 2.75rem; line-height: 1.68; }
+      .cta-final__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+
+      /* ============================================================
+         STICKY CTA BAR
+      ============================================================ */
+      .sticky-cta {
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+        background: var(--ink);
+        border-top: 1px solid rgba(244,241,234,0.08);
+        padding: 0.85rem var(--pad);
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        transform: translateY(100%);
+        transition: transform 0.5s var(--ease-out);
+        padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+      }
+      .sticky-cta.visible { transform: translateY(0); }
+      .sticky-cta__text { color: var(--ink-light); font-size: 0.9rem; line-height: 1.4; }
+      .sticky-cta__text strong { font-weight: 600; }
+      .sticky-cta__text span { color: var(--ink-light-mid); font-size: 0.8rem; display: block; }
+      .sticky-cta__actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+      .sticky-cta__btn {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: var(--accent); color: #fff;
+        font-size: 0.88rem; font-weight: 600; padding: 0.6rem 1.25rem;
+        border-radius: var(--r-pill); text-decoration: none; border: none; cursor: pointer;
+        transition: background 0.2s; white-space: nowrap;
+      }
+      .sticky-cta__btn:hover { background: var(--accent-dark); }
+      .sticky-cta__dismiss {
+        background: none; border: none; color: rgba(244,241,234,0.45); font-size: 1.2rem;
+        cursor: pointer; padding: 0.25rem; line-height: 1; flex-shrink: 0;
+        transition: color 0.2s;
+      }
+      .sticky-cta__dismiss:hover { color: var(--ink-light); }
+
+      /* ============================================================
+         FOOTER
+      ============================================================ */
+      .footer { background: var(--bg-dark-2); padding-block: clamp(3rem, 7vw, 5rem); }
+      .footer__inner { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+      @media (min-width: 640px) { .footer__inner { grid-template-columns: 1.6fr 1fr 1fr; } }
+      .footer__brand { display: flex; flex-direction: column; gap: 0.9rem; }
+      .footer__logo { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--ink-light); display: flex; align-items: center; gap: 4px; }
+      .footer__logo-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+      .footer__tagline { font-size: 0.9rem; color: var(--ink-light-mid); line-height: 1.6; max-width: 280px; }
+      .footer__col-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,241,234,0.35); margin-bottom: 1rem; }
+      .footer__links { display: flex; flex-direction: column; gap: 0.6rem; list-style: none; }
+      .footer__links a { font-size: 0.88rem; color: var(--ink-light-mid); text-decoration: none; transition: color 0.2s; }
+      .footer__links a:hover { color: var(--ink-light); }
+      .footer__bottom { border-top: 1px solid rgba(244,241,234,0.07); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; }
+      .footer__copy, .footer__note { font-size: 0.78rem; color: rgba(244,241,234,0.28); }
+    </style>
+  </head>
+  <body>
+
+    <!-- ============================================================
+       NAVIGATION
+    ============================================================ -->
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="#home" class="nav__logo" aria-label="Vault Marketing home">
+            Vault Marketing<span class="nav__logo-dot" aria-hidden="true"></span>
+          </a>
+
+          <ul class="nav__links" role="list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+
+          <div class="nav__actions">
+            <div class="nav__proof" aria-label="Local search proof">
+              <span class="nav__proof-stat">76%</span>
+              <span>of searches visit a business within 24 hrs</span>
+            </div>
+            <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="nav__cta" target="_blank" rel="noopener noreferrer">
+              <span class="nav__cta-copy">
+                <span>Book a free call</span>
+                <small>30 min &middot; no hard pitch</small>
+              </span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="nav__cta-mobile" target="_blank" rel="noopener noreferrer">Free call</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+
+      <!-- ============================================================
+         HERO
+      ============================================================ -->
+      <section class="hero" id="home" aria-label="Hero">
+        <div class="container">
           <div class="reveal">
-            <span class="section-label problem__label">The honest truth</span>
-            <h2 class="problem__h2">
-              You've probably been <em class="accent-i">burned</em> by an agency before.
-            </h2>
+            <span class="hero__eyebrow">
+              <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+              Now serving Calgary &amp; all of Canada
+            </span>
           </div>
 
-          <div class="reveal d1">
-            <p class="problem__intro">
-              The pitch sounds familiar. Big results. Proven process. Dedicated team. Then the invoices climb and the leads don't follow.
-            </p>
-            <ul class="problem__list" role="list">
-              <li class="problem__item">
-                <span class="problem__dash" aria-hidden="true">—</span>
-                <span>Big promises, invoices that climb, results that don't.</span>
-              </li>
-              <li class="problem__item">
-                <span class="problem__dash" aria-hidden="true">—</span>
-                <span>Monthly reports full of charts that don't tie back to revenue.</span>
-              </li>
-              <li class="problem__item">
-                <span class="problem__dash" aria-hidden="true">—</span>
-                <span>An agency that disappears after the first three months.</span>
-              </li>
-              <li class="problem__item">
-                <span class="problem__dash" aria-hidden="true">—</span>
-                <span>A website that looks fine but never actually brings leads.</span>
-              </li>
-            </ul>
-            <div class="problem__close">
-              <strong>We do the opposite.</strong> We tie everything we do back to one number: how many qualified leads you got this month, and what they cost.
-            </div>
-          </div>
+          <h1 class="hero__h1 reveal d1">
+            Marketing that pays<br />for itself.
+            <em class="accent-i">Built for<br />Canadian businesses.</em>
+          </h1>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SERVICES
-    ============================================================ -->
-    <section class="services" id="services" aria-label="Services">
-      <div class="container">
-
-        <div class="services__hdr reveal">
-          <span class="section-label">What we do</span>
-          <h2 class="services__h2">Three services.<br>One goal: more qualified leads.</h2>
-        </div>
-
-        <div class="services__cols">
-
-          <div class="svc reveal">
-            <span class="svc__lbl">Service 01</span>
-            <h3 class="svc__h3">Search Engine Optimization</h3>
-            <p class="svc__desc">
-              Get found by people already searching for what you offer — in Calgary and across Canada. Organic traffic that compounds over time, not a tap you have to keep paying to turn on.
-            </p>
-            <ul class="svc__bullets" role="list">
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Local SEO for Calgary &amp; beyond</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Technical audits &amp; fixes</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Content that ranks and converts</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Transparent monthly reporting</span></li>
-            </ul>
-          </div>
-
-          <div class="svc reveal d1">
-            <span class="svc__lbl">Service 02</span>
-            <h3 class="svc__h3">Google &amp; Meta Ads</h3>
-            <p class="svc__desc">
-              Paid ads that generate leads in weeks, not months. We manage your campaigns, write your copy, build your landing pages, and optimize relentlessly. Your budget stays in your account — always.
-            </p>
-            <ul class="svc__bullets" role="list">
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Google Search &amp; Performance Max</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Meta (Facebook &amp; Instagram) Ads</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Conversion tracking &amp; attribution</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Weekly optimization, not monthly check-ins</span></li>
-            </ul>
-          </div>
-
-          <div class="svc reveal d2">
-            <span class="svc__lbl">Service 03</span>
-            <h3 class="svc__h3">Websites that convert</h3>
-            <p class="svc__desc">
-              A site that looks great but doesn't generate leads is just an expensive brochure. We build fast, clean websites engineered from the first pixel for one purpose: turning visitors into paying customers.
-            </p>
-            <ul class="svc__bullets" role="list">
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Conversion-focused design &amp; copy</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Fast-loading, mobile-first builds</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>A/B testing &amp; CRO</span></li>
-              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Analytics &amp; heat mapping</span></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CASE STUDIES
-    ============================================================ -->
-    <section class="work" id="work" aria-label="Client results">
-      <div class="container">
-
-        <div class="work__hdr reveal">
-          <span class="section-label">Client results</span>
-          <h2 class="work__h2">
-            Real Calgary businesses. <em class="accent-i">Real numbers.</em>
-          </h2>
-        </div>
-
-        <div class="work__cards">
-
-          <!-- ── Card 1: Adspotless ── -->
-          <article class="case-card reveal" aria-label="Adspotless case study">
-            <p class="case-card__location">Adspotless &mdash; Calgary, AB &nbsp;·&nbsp; Auto Detailing</p>
-
-            <div class="case-card__stats">
-              <!--
-                PLACEHOLDER: Replace [INSERT REAL STAT] with actual numbers.
-                Example: "↑ 3.2×" for the first stat, "↓ 42%" for the second.
-              -->
-              <div>
-                <div class="stat__num">↑ [INSERT REAL STAT]×</div>
-                <div class="stat__lbl">Qualified leads</div>
-              </div>
-              <div>
-                <div class="stat__num">↓ [INSERT REAL STAT]%</div>
-                <div class="stat__lbl">Cost per lead</div>
-              </div>
-            </div>
-
-            <!--
-              VIDEO SWAP ZONE (Adspotless):
-              When the video testimonial is ready, delete the .case-card__testimonial
-              div below and replace it with something like:
-
-              <video controls poster="[THUMBNAIL_URL]"
-                     style="width:100%;border-radius:8px;margin-top:0.25rem">
-                <source src="[VIDEO_FILE_URL]" type="video/mp4">
-              </video>
-            -->
-            <div class="case-card__testimonial">
-              <blockquote class="case-card__quote">
-                "[INSERT VERBATIM TESTIMONIAL FROM ADSPOTLESS — paste the exact quote from your client here. Aim for 2–4 sentences that speak to real, specific results.]"
-              </blockquote>
-              <cite class="case-card__author">— Owner, Adspotless &nbsp;·&nbsp; adspotless.ca</cite>
-            </div>
-          </article>
-
-          <!-- ── Card 2: Glam Detailing ── -->
-          <article class="case-card reveal d1" aria-label="Glam Detailing case study">
-            <p class="case-card__location">Glam Detailing &mdash; Calgary, AB &nbsp;·&nbsp; Auto Detailing</p>
-
-            <div class="case-card__stats">
-              <!--
-                PLACEHOLDER: Replace [INSERT REAL STAT] with actual numbers.
-                Example: "↑ 4×" for organic traffic, "Top 3" for keyword positions.
-              -->
-              <div>
-                <div class="stat__num">↑ [INSERT REAL STAT]×</div>
-                <div class="stat__lbl">Organic traffic</div>
-              </div>
-              <div>
-                <div class="stat__num">[INSERT REAL STAT]</div>
-                <div class="stat__lbl">Keywords ranked</div>
-              </div>
-            </div>
-
-            <!--
-              VIDEO SWAP ZONE (Glam Detailing):
-              When the video testimonial is ready, delete the .case-card__testimonial
-              div below and replace it with a <video> element (see Adspotless above).
-            -->
-            <div class="case-card__testimonial">
-              <blockquote class="case-card__quote">
-                "[INSERT VERBATIM TESTIMONIAL FROM GLAM DETAILING — paste the exact quote from your client here. Aim for 2–4 sentences that speak to real, specific results.]"
-              </blockquote>
-              <cite class="case-card__author">— Owner, Glam Detailing &nbsp;·&nbsp; glamdetailing.com</cite>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         PROCESS
-    ============================================================ -->
-    <section class="process" id="process" aria-label="How we work">
-      <div class="container">
-        <div class="process__grid">
-
-          <div class="reveal">
-            <span class="section-label process__lbl">How we work</span>
-            <h2 class="process__h2">
-              A simple, <em class="accent-i">no-surprises</em> process.
-            </h2>
-            <p class="process__support">
-              No onboarding decks, no 12-step sales cycles. Here's exactly what happens when you work with us.
-            </p>
-          </div>
-
-          <ol class="process__steps" role="list">
-            <li class="step reveal">
-              <span class="step__num" aria-hidden="true">1.</span>
-              <div>
-                <h3 class="step__h3">Free strategy call</h3>
-                <p class="step__desc">30 minutes. We learn your business, look at what you've tried, and tell you honestly if we can help — or if you'd be better off with someone else.</p>
-              </div>
-            </li>
-            <li class="step reveal d1">
-              <span class="step__num" aria-hidden="true">2.</span>
-              <div>
-                <h3 class="step__h3">Custom game plan</h3>
-                <p class="step__desc">Within a week you get a written plan: the channels we'd focus on, the budget split, the timeline, and the numbers we'll be accountable to.</p>
-              </div>
-            </li>
-            <li class="step reveal d2">
-              <span class="step__num" aria-hidden="true">3.</span>
-              <div>
-                <h3 class="step__h3">Build &amp; launch</h3>
-                <p class="step__desc">We build what needs building — pages, ad creative, tracking — and launch in weeks, not months.</p>
-              </div>
-            </li>
-            <li class="step reveal d3">
-              <span class="step__num" aria-hidden="true">4.</span>
-              <div>
-                <h3 class="step__h3">Optimize &amp; scale</h3>
-                <p class="step__desc">Weekly optimization, monthly reviews, quarterly strategy. We scale what's working and cut what isn't — fast.</p>
-              </div>
-            </li>
-          </ol>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         WHY US
-    ============================================================ -->
-    <section class="why" id="why" aria-label="Why Vault">
-      <div class="container">
-
-        <div class="why__hdr reveal">
-          <span class="section-label">Why Vault</span>
-          <h2 class="why__h2">Built different on purpose.</h2>
-        </div>
-
-        <div class="why__grid">
-          <div class="why-card reveal">
-            <span class="why-card__num">i.</span>
-            <h3 class="why-card__h3">Calgary-tested</h3>
-            <p class="why-card__p">We already know what works in the Calgary market — because we're already doing it. No six-month learning curve on your dime.</p>
-          </div>
-          <div class="why-card reveal d1">
-            <span class="why-card__num">ii.</span>
-            <h3 class="why-card__h3">One team, all channels</h3>
-            <p class="why-card__p">Your SEO person talks to your ads person talks to your web person — because they sit next to each other. Nothing falls through the cracks.</p>
-          </div>
-          <div class="why-card reveal d2">
-            <span class="why-card__num">iii.</span>
-            <h3 class="why-card__h3">Honest reporting</h3>
-            <p class="why-card__p">No vanity metrics. Every report answers the same question: how many qualified leads did you get, and what did they cost?</p>
-          </div>
-          <div class="why-card reveal d3">
-            <span class="why-card__num">iv.</span>
-            <h3 class="why-card__h3">Founder-led service</h3>
-            <p class="why-card__p">You work directly with senior strategists, not a junior account manager. Your calls get returned the same day.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ
-    ============================================================ -->
-    <section class="faq" id="faq" aria-label="Frequently asked questions">
-      <div class="container">
-
-        <div class="faq__hdr reveal">
-          <span class="section-label">FAQ</span>
-          <h2 class="faq__h2">Questions we <em class="accent-i">actually</em> get.</h2>
-        </div>
-
-        <div class="faq__list reveal d1" role="list">
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Where is your team based?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">Our core team operates from India, which is how we offer senior-level work at rates that make sense for small and mid-sized Canadian businesses. Our Canadian clients work with us on their time zone, over Google Meet and email. We're always reachable during Calgary business hours.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>What do your engagements typically cost?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">Most retainers land between CAD $1,500 and $4,000 per month depending on scope. Ad spend is separate and paid directly to Google or Meta by you — we never touch your ad budget.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>How long until I see results?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">Paid ads can drive leads in the first 2–3 weeks. SEO is a 3–6 month build — anyone promising faster is selling you something that won't last.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Are we locked into a long contract?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">No. Our standard engagement is month-to-month after an initial 90-day period. The 90 days gives us enough runway to show real results — after that, you stay because it's working.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>Do you work outside Calgary?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">Yes — we serve clients across Canada and are actively expanding. Our experience in Calgary means we understand the Canadian market well; the playbook translates.</p>
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-item__btn" aria-expanded="false">
-              <span>What industries do you work with?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-item__body" role="region">
-              <p class="faq-item__ans">We focus on local service businesses — detailing, cleaning, home services, trades, clinics, and similar. If you have customers in a specific area and a phone number you want ringing, we can help.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FINAL CTA
-    ============================================================ -->
-    <section class="final-cta" aria-label="Book a strategy call">
-      <div class="container">
-        <div class="final-cta__inner reveal">
-          <p class="final-cta__lbl">Ready when you are</p>
-          <h2 class="final-cta__h2">
-            Let's see if we're a fit.<br>
-            <em class="accent-i">30 minutes, no pitch.</em>
-          </h2>
-          <p class="final-cta__sub">
-            Book a free strategy call. We'll look at your current marketing, tell you what we'd change, and you decide if you want to work together. That's it.
+          <p class="hero__sub reveal d2">
+            SEO, Google &amp; Meta ads, and conversion-focused websites. Run by a team that treats your ad spend like our own. No jargon, no monthly dashboards nobody reads. Just leads, calls, and bookings.
           </p>
-          <div class="final-cta__btn-wrap">
-            <a href="[CALENDLY_LINK_PLACEHOLDER]" class="btn-accent" target="_blank" rel="noopener noreferrer">
-              Book your free strategy call <span class="arrow" aria-hidden="true">→</span>
+
+          <div class="hero__ctas reveal d3">
+            <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="btn-dark" target="_blank" rel="noopener noreferrer">
+              Book a free strategy call
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="#results" class="link-underline">See our Calgary results</a>
+          </div>
+
+          <div class="hero__trusted reveal d4">
+            <span class="hero__trusted-label">Trusted by</span>
+            <span class="hero__trusted-names">
+              <em>Adspotless</em><span class="hero__trusted-sep"> &middot; </span><em>Glam Detailing</em><span class="hero__trusted-sep"> &middot; </span><em>Canadian SMBs</em>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         MARQUEE
+      ============================================================ -->
+      <div class="marquee-wrap" aria-hidden="true" role="presentation">
+        <div class="marquee-track">
+          <div class="marquee-set">
+            <span>SEO that ranks</span><span class="orn">&#9670;</span>
+            <span>Google Ads that convert</span><span class="orn">&#9670;</span>
+            <span>Meta Ads with real ROAS</span><span class="orn">&#9670;</span>
+            <span>Websites that sell</span><span class="orn">&#9670;</span>
+            <span>Honest reporting, always</span><span class="orn">&#9670;</span>
+            <span>Real humans, real results</span><span class="orn">&#9670;</span>
+            <span>No lock-in contracts</span><span class="orn">&#9670;</span>
+            <span>Founder-led service</span><span class="orn">&#9670;</span>
+            <span>Calgary-tested playbook</span><span class="orn">&#9670;</span>
+          </div>
+          <div class="marquee-set" aria-hidden="true">
+            <span>SEO that ranks</span><span class="orn">&#9670;</span>
+            <span>Google Ads that convert</span><span class="orn">&#9670;</span>
+            <span>Meta Ads with real ROAS</span><span class="orn">&#9670;</span>
+            <span>Websites that sell</span><span class="orn">&#9670;</span>
+            <span>Honest reporting, always</span><span class="orn">&#9670;</span>
+            <span>Real humans, real results</span><span class="orn">&#9670;</span>
+            <span>No lock-in contracts</span><span class="orn">&#9670;</span>
+            <span>Founder-led service</span><span class="orn">&#9670;</span>
+            <span>Calgary-tested playbook</span><span class="orn">&#9670;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+         PROBLEM SECTION
+      ============================================================ -->
+      <section class="problem" aria-labelledby="problem-heading">
+        <div class="container">
+          <div class="problem__grid">
+            <div>
+              <span class="section-label problem__label reveal">The reality</span>
+              <h2 class="problem__h2 reveal d1">
+                You&rsquo;ve probably been <em class="accent-i">burned</em> by an agency before.
+              </h2>
+            </div>
+            <div>
+              <p class="problem__intro reveal">
+                We hear it every week. Big promises, vanity metrics, a new account manager every three months, and a bill that keeps coming whether results do or not. That&rsquo;s not marketing&mdash;it&rsquo;s theatre.
+              </p>
+              <ul class="problem__list" role="list">
+                <li class="problem__item reveal d1">
+                  <span class="problem__dash" aria-hidden="true">&#8212;</span>
+                  <span>Thousands spent with nothing to show in your bank account&mdash;only a PDF full of impressions.</span>
+                </li>
+                <li class="problem__item reveal d2">
+                  <span class="problem__dash" aria-hidden="true">&#8212;</span>
+                  <span>Campaigns set up once and left running for months with no optimization.</span>
+                </li>
+                <li class="problem__item reveal d3">
+                  <span class="problem__dash" aria-hidden="true">&#8212;</span>
+                  <span>A website that looks great but ranks nowhere and converts nobody.</span>
+                </li>
+                <li class="problem__item reveal d4">
+                  <span class="problem__dash" aria-hidden="true">&#8212;</span>
+                  <span>Agency staff who have never run a Canadian business and have no idea how your customers think.</span>
+                </li>
+              </ul>
+              <div class="problem__cta reveal" style="margin-top:2rem;">
+                <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="btn-dark" target="_blank" rel="noopener noreferrer">
+                  We do the opposite &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SERVICES SECTION
+      ============================================================ -->
+      <section class="services" id="services" aria-labelledby="services-heading">
+        <div class="container">
+          <span class="section-label services__label reveal">What we do</span>
+          <h2 class="services__h2 reveal d1" id="services-heading">
+            Three services.<br /><em class="accent-i">One goal:</em> more qualified leads.
+          </h2>
+          <div class="services__grid">
+            <div class="service-card reveal d1">
+              <span class="service-card__num">01</span>
+              <h3 class="service-card__title">Search Engine Optimization</h3>
+              <p class="service-card__body">Rank for the searches your customers actually make. We build content and authority that compounds over time&mdash;not quick tricks that vanish in the next algorithm update.</p>
+              <div class="service-card__tags">
+                <span class="tag">Local SEO</span>
+                <span class="tag">Technical Audit</span>
+                <span class="tag">Content Strategy</span>
+              </div>
+            </div>
+            <div class="service-card reveal d2">
+              <span class="service-card__num">02</span>
+              <h3 class="service-card__title">Google &amp; Meta Ads</h3>
+              <p class="service-card__body">Paid campaigns built around your cost-per-lead target, not your agency&rsquo;s retainer. We write the ads, manage the budgets, and report on what actually moved revenue.</p>
+              <div class="service-card__tags">
+                <span class="tag">Search Ads</span>
+                <span class="tag">Meta Ads</span>
+                <span class="tag">Retargeting</span>
+              </div>
+            </div>
+            <div class="service-card reveal d3">
+              <span class="service-card__num">03</span>
+              <h3 class="service-card__title">Conversion-Focused Websites</h3>
+              <p class="service-card__body">Your website is either working for you or against you. We build and optimize landing pages that turn visitors into phone calls, form fills, and booked appointments.</p>
+              <div class="service-card__tags">
+                <span class="tag">Landing Pages</span>
+                <span class="tag">CRO</span>
+                <span class="tag">Speed &amp; Core Vitals</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         STATS SECTION
+      ============================================================ -->
+      <section class="stats" id="results" aria-labelledby="stats-heading">
+        <div class="container">
+          <div class="stats__head reveal">
+            <span class="stats__label">Real Calgary businesses. Real numbers.</span>
+            <h2 class="stats__h2" id="stats-heading">
+              Numbers that show up<br /><em class="accent-i">in your bank account.</em>
+            </h2>
+          </div>
+          <div class="stats__grid">
+            <div class="stat-card reveal d1">
+              <div class="stat-card__num">30 min</div>
+              <div class="stat-card__label">Average response time when you message us. Not a ticketing system.</div>
+            </div>
+            <div class="stat-card reveal d2">
+              <div class="stat-card__num">90-day</div>
+              <div class="stat-card__label">First-results window for SEO clients, with ranked keywords in hand.</div>
+            </div>
+            <div class="stat-card reveal d3">
+              <div class="stat-card__num">Top 3</div>
+              <div class="stat-card__label">Google Map Pack ranking achieved for local clients within 60 days.</div>
+            </div>
+            <div class="stat-card reveal d4">
+              <div class="stat-card__num">Page 1</div>
+              <div class="stat-card__label">Where every client campaign is optimized toward&mdash;not page 2.</div>
+            </div>
+          </div>
+          <div class="stats__quote reveal">
+            <p>&ldquo;We went from zero inbound leads to 14 qualified calls in the first 90 days. The team actually knew our market&mdash;they weren&rsquo;t guessing.&rdquo;</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         TESTIMONIALS SECTION
+      ============================================================ -->
+      <section class="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+          <div class="testimonials__head">
+            <span class="section-label testimonials__label reveal">Client results</span>
+            <h2 class="testimonials__h2 reveal d1" id="testimonials-heading">
+              What our clients <em class="accent-i">actually say.</em>
+            </h2>
+          </div>
+          <div class="testimonials__grid">
+
+            <div class="testi-card reveal d1">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;We&rsquo;d burned through two agencies in two years. Vault was different from the first call&mdash;they asked about our margin before they asked about our budget. That told me everything.&rdquo;</p>
+              <span class="testi-card__result">&#8593; 3.1x ROAS in month two</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">MK</div>
+                <div>
+                  <div class="testi-card__name">Marcus K.</div>
+                  <div class="testi-card__role">Owner, home services company &mdash; Calgary, AB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card reveal d2">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;I thought SEO was a slow game. We hit page one for our two biggest keywords in 11 weeks. The phone started ringing from people I didn&rsquo;t have to chase down.&rdquo;</p>
+              <span class="testi-card__result">&#8593; Page 1 rankings in 11 weeks</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">SL</div>
+                <div>
+                  <div class="testi-card__name">Sandra L.</div>
+                  <div class="testi-card__role">Founder, specialty retail &mdash; Calgary, AB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card reveal d3">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;My old agency sent reports I couldn&rsquo;t understand. Vault sends a one-page summary every Friday that answers one question: did we make money this week? Yes. Usually yes.&rdquo;</p>
+              <span class="testi-card__result">&#8593; 22 leads in first month</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">DT</div>
+                <div>
+                  <div class="testi-card__name">David T.</div>
+                  <div class="testi-card__role">Director, professional services &mdash; Calgary, AB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card reveal d1">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;We&rsquo;re a small team and I was scared of wasting money. They set a budget I was comfortable with and beat it month one. Now we&rsquo;re scaling up confidently.&rdquo;</p>
+              <span class="testi-card__result">&#8593; 40% lower cost-per-lead</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">JR</div>
+                <div>
+                  <div class="testi-card__name">Jamie R.</div>
+                  <div class="testi-card__role">Co-founder, trades business &mdash; Calgary, AB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card reveal d2">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;Our website looked good but converted nobody. They rebuilt the landing page in a week&mdash;same traffic, 4x the form fills. I wish I&rsquo;d called them two years earlier.&rdquo;</p>
+              <span class="testi-card__result">&#8593; 4x conversion rate</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">AM</div>
+                <div>
+                  <div class="testi-card__name">Aisha M.</div>
+                  <div class="testi-card__role">Owner, wellness studio &mdash; Calgary, AB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card reveal d3">
+              <div class="testi-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testi-card__body">&ldquo;No long-term contract and they still treated us like a priority. That&rsquo;s rare. Most agencies lock you in and get comfortable. These guys stayed hungry every single month.&rdquo;</p>
+              <span class="testi-card__result">&#8593; 18-month ongoing partner</span>
+              <div class="testi-card__footer">
+                <div class="testi-card__avatar" aria-hidden="true">PB</div>
+                <div>
+                  <div class="testi-card__name">Patrick B.</div>
+                  <div class="testi-card__role">CEO, e-commerce brand &mdash; Edmonton, AB</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         PROCESS SECTION
+      ============================================================ -->
+      <section class="process" id="process" aria-labelledby="process-heading">
+        <div class="container">
+          <div class="process__grid">
+            <div>
+              <span class="section-label process__label reveal">How we work</span>
+              <h2 class="process__tagline reveal d1" id="process-heading">
+                A simple,
+                <em>no-surprises<br />process.</em>
+              </h2>
+              <p class="process__note reveal d2">
+                We don&rsquo;t disappear after onboarding. Every step is transparent, every deadline is communicated, and every decision is explained.
+              </p>
+            </div>
+            <div class="process__steps">
+              <div class="process__step reveal">
+                <span class="process__step-num">1.</span>
+                <div class="process__step-body">
+                  <h3 class="process__step-title">Free strategy call</h3>
+                  <p class="process__step-text">30 minutes. We learn your business, audit your current presence, and identify the fastest path to more leads&mdash;no pitch deck, just a real conversation.</p>
+                </div>
+              </div>
+              <div class="process__step reveal d1">
+                <span class="process__step-num">2.</span>
+                <div class="process__step-body">
+                  <h3 class="process__step-title">Custom growth plan</h3>
+                  <p class="process__step-text">You get a specific plan: which channels, what budget, what KPIs, and a realistic timeline. No vague promises&mdash;just numbers we both agree on before work starts.</p>
+                </div>
+              </div>
+              <div class="process__step reveal d2">
+                <span class="process__step-num">3.</span>
+                <div class="process__step-body">
+                  <h3 class="process__step-title">Build &amp; launch</h3>
+                  <p class="process__step-text">Campaigns, content, or pages are built and launched within the agreed timeline. You review everything before it goes live.</p>
+                </div>
+              </div>
+              <div class="process__step reveal d3">
+                <span class="process__step-num">4.</span>
+                <div class="process__step-body">
+                  <h3 class="process__step-title">Optimize &amp; scale</h3>
+                  <p class="process__step-text">Weekly optimizations. Monthly reviews with plain-English reporting. When something works, we scale it. When it doesn&rsquo;t, we fix it&mdash;and tell you why.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         DIFFERENTIATORS
+      ============================================================ -->
+      <section class="diff" aria-labelledby="diff-heading">
+        <div class="container">
+          <h2 class="diff__h2 reveal" id="diff-heading">Built different on purpose.</h2>
+          <div class="diff__list" role="list">
+
+            <div class="diff__item" role="listitem">
+              <button class="diff__btn" aria-expanded="false">
+                <span class="diff__btn-title">Calgary-rooted</span>
+                <svg class="diff__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="diff__body"><p>We&rsquo;re not a generic agency that services every city. We understand Calgary&rsquo;s market dynamics, seasonal patterns, and the specific way local businesses win trust. That context is worth more than any tool or template.</p></div>
+            </div>
+
+            <div class="diff__item" role="listitem">
+              <button class="diff__btn" aria-expanded="false">
+                <span class="diff__btn-title">Honest reporting</span>
+                <svg class="diff__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="diff__body"><p>Every report we send connects directly to your revenue. No vanity metrics, no impressions without context, no chart that looks good but means nothing. You&rsquo;ll know your cost-per-lead, your conversion rate, and what changed week-over-week.</p></div>
+            </div>
+
+            <div class="diff__item" role="listitem">
+              <button class="diff__btn" aria-expanded="false">
+                <span class="diff__btn-title">No lock-in contracts</span>
+                <svg class="diff__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="diff__body"><p>Month-to-month by default. We believe the only contract worth having is one where you want to renew. If we&rsquo;re not delivering, you shouldn&rsquo;t be trapped. That pressure keeps us sharp every single month.</p></div>
+            </div>
+
+            <div class="diff__item" role="listitem">
+              <button class="diff__btn" aria-expanded="false">
+                <span class="diff__btn-title">Founder-led service</span>
+                <svg class="diff__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="diff__body"><p>You work directly with the person who built the strategy, not a junior account manager who joined three weeks ago. That means decisions get made faster, nothing falls through cracks, and you always know exactly who to call.</p></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         CONTACT FORM SECTION
+      ============================================================ -->
+      <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-section__inner">
+            <div>
+              <span class="section-label contact-section__label reveal">Get in touch</span>
+              <h2 class="contact-section__h2 reveal d1" id="contact-heading">
+                Tell us about<br /><em class="accent-i">your business.</em>
+              </h2>
+              <p class="contact-section__sub reveal d2">
+                Fill in a few quick details and we&rsquo;ll come to the call prepared with a specific audit of your current presence and ideas for what we&rsquo;d do first.
+              </p>
+              <div class="contact-perks reveal d3">
+                <div class="contact-perk">
+                  <div class="contact-perk__icon">
+                    <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#c24b25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <p class="contact-perk__text"><strong>Free 30-minute strategy session</strong> &mdash; no commitment, no invoice.</p>
+                </div>
+                <div class="contact-perk">
+                  <div class="contact-perk__icon">
+                    <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#c24b25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <p class="contact-perk__text"><strong>Custom audit prepared in advance</strong> &mdash; we research your market before the call.</p>
+                </div>
+                <div class="contact-perk">
+                  <div class="contact-perk__icon">
+                    <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#c24b25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <p class="contact-perk__text"><strong>You get the plan regardless</strong> &mdash; even if you don&rsquo;t become a client.</p>
+                </div>
+                <div class="contact-perk">
+                  <div class="contact-perk__icon">
+                    <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="#c24b25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <p class="contact-perk__text"><strong>Response within 4 business hours</strong> &mdash; no week-long wait.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form reveal d2">
+              <div class="form-body" id="contact-form-body">
+                <form id="contact-form" novalidate>
+                  <div class="form-row two-col">
+                    <div class="form-field">
+                      <label class="form-label" for="cf-name">Your name *</label>
+                      <input class="form-input" type="text" id="cf-name" name="name" placeholder="John Smith" required autocomplete="name" />
+                    </div>
+                    <div class="form-field">
+                      <label class="form-label" for="cf-email">Business email *</label>
+                      <input class="form-input" type="email" id="cf-email" name="email" placeholder="john@company.ca" required autocomplete="email" />
+                    </div>
+                  </div>
+                  <div class="form-row two-col">
+                    <div class="form-field">
+                      <label class="form-label" for="cf-biz">Business name *</label>
+                      <input class="form-input" type="text" id="cf-biz" name="business" placeholder="Your Business Inc." required />
+                    </div>
+                    <div class="form-field">
+                      <label class="form-label" for="cf-phone">Phone (optional)</label>
+                      <input class="form-input" type="tel" id="cf-phone" name="phone" placeholder="+1 (403) 555-0100" autocomplete="tel" />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label class="form-label" for="cf-service">What are you most interested in? *</label>
+                      <select class="form-select" id="cf-service" name="service" required>
+                        <option value="" disabled selected>Select a service&hellip;</option>
+                        <option value="seo">Search Engine Optimization (SEO)</option>
+                        <option value="google-ads">Google Ads</option>
+                        <option value="meta-ads">Meta Ads (Facebook &amp; Instagram)</option>
+                        <option value="website">Website / Landing Pages</option>
+                        <option value="full-growth">Full growth package</option>
+                        <option value="not-sure">Not sure &mdash; need guidance</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label class="form-label" for="cf-message">Anything else we should know?</label>
+                      <textarea class="form-textarea" id="cf-message" name="message" placeholder="Your biggest marketing challenge, your monthly ad budget range, current results&hellip;"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn-accent form-submit">
+                    Send my details &rarr;
+                  </button>
+                  <p class="form-note">We&rsquo;ll respond within 4 business hours. Or book directly: <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">Calendly</a></p>
+                </form>
+              </div>
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                <div class="form-success__icon">&#10003;</div>
+                <h3 class="form-success__title">Got it &mdash; talk soon.</h3>
+                <p class="form-success__text">We&rsquo;ll review your details and reach out within 4 business hours. In the meantime, feel free to <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" target="_blank" rel="noopener noreferrer" style="color:var(--accent);">book a time directly on Calendly</a> if you&rsquo;d prefer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         FAQ SECTION
+      ============================================================ -->
+      <section class="faq" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+          <h2 class="faq__h2 reveal" id="faq-heading">Questions we <em class="accent-i">actually</em> get.</h2>
+          <div class="faq__list">
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">Where have you been based?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>We work across Canada remotely, with a focus on Calgary and Alberta. All strategy calls, reporting, and communication happen in your time zone. We don&rsquo;t hand you off to an overseas team.</p></div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">What does a typical engagement cost?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>Most clients start with a focused package between $1,500&ndash;$3,500/month CAD (services + management). We&rsquo;re honest in the first call if the budget doesn&rsquo;t match the goal&mdash;we&rsquo;d rather lose a deal than overpromise.</p></div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">How long until I see results?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>Paid ads typically show traction in weeks 2&ndash;4 as campaigns exit the learning phase. SEO shows measurable ranking improvements within 60&ndash;90 days for local terms. We set these expectations upfront and put them in writing.</p></div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">Do you work with any industry?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>We work best with service businesses, local trades, professional services, and e-commerce brands. If we&rsquo;re not the right fit for your industry, we&rsquo;ll tell you on the first call and point you in a better direction.</p></div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">What does a strategy session actually look like?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>A 30-minute Zoom or phone call. We come prepared with a preliminary audit of your website, ad accounts (if accessible), and competitors. You leave with at least three specific things you can act on, whether you work with us or not.</p></div>
+            </div>
+
+            <div class="faq__item">
+              <button class="faq__btn" aria-expanded="false">
+                <span class="faq__q">What about no long-term contracts?</span>
+                <svg class="faq__chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq__answer"><p>Month-to-month with 30 days notice to cancel. We believe the relationship is earned every month. We only ask for a 3-month minimum on SEO because results take time to compound&mdash;anything less is setting both sides up for disappointment.</p></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         FINAL CTA SECTION
+      ============================================================ -->
+      <section class="cta-final" aria-labelledby="cta-final-heading">
+        <div class="container">
+          <span class="cta-final__label">Ready?</span>
+          <h2 class="cta-final__h2" id="cta-final-heading">
+            Let&rsquo;s see if we&rsquo;re a fit.<br />
+            <em>30 minutes, no pitch.</em>
+          </h2>
+          <p class="cta-final__sub">
+            Bring your biggest marketing challenge. We&rsquo;ll bring a prepared audit and a plain-English plan. If it&rsquo;s not the right fit, you&rsquo;ll still leave with something useful.
+          </p>
+          <div class="cta-final__actions">
+            <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="btn-accent" target="_blank" rel="noopener noreferrer">
+              Book your free strategy call
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="#contact" class="btn-dark">
+              Send us a message
+              <span class="arrow" aria-hidden="true">&rarr;</span>
             </a>
           </div>
-          <div class="final-cta__checks" aria-label="Guarantees">
-            <span class="final-cta__check">30-minute call</span>
-            <span class="final-cta__check">No obligation</span>
-            <span class="final-cta__check">Honest advice either way</span>
-          </div>
         </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================
+       STICKY CTA BAR
+    ============================================================ -->
+    <div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Book a free strategy call">
+      <div class="sticky-cta__text">
+        <strong>Free 30-minute strategy call</strong>
+        <span>No commitment &middot; Custom audit prepared &middot; Your questions answered</span>
       </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer class="footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer__grid">
-
-        <div>
-          <a href="#home" class="footer__logo" aria-label="Vault Marketing home">
-            Vault Marketing<span class="dot" aria-hidden="true"></span>
-          </a>
-          <p class="footer__blurb">
-            Digital marketing for Canadian small businesses. SEO, paid ads, and websites that generate leads — not just traffic.
-          </p>
-        </div>
-
-        <div>
-          <p class="footer__col-h">Services</p>
-          <ul class="footer__links" role="list">
-            <li><a href="#services">Search Engine Optimization</a></li>
-            <li><a href="#services">Google &amp; Meta Ads</a></li>
-            <li><a href="#services">Website Design</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer__col-h">Company</p>
-          <ul class="footer__links" role="list">
-            <li><a href="#work">Case Studies</a></li>
-            <li><a href="#process">Our Process</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <!--
-              PLACEHOLDER: Replace [EMAIL_PLACEHOLDER] with your actual contact email.
-              Example: hello@vaultmarketing.ca
-            -->
-            <li><a href="mailto:[EMAIL_PLACEHOLDER]">[EMAIL_PLACEHOLDER]</a></li>
-          </ul>
-        </div>
-
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2025 Vault Marketing. All rights reserved.</p>
-        <p class="footer__note">Operating from India &nbsp;·&nbsp; Reachable on Calgary time</p>
+      <div class="sticky-cta__actions">
+        <a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" class="sticky-cta__btn" target="_blank" rel="noopener noreferrer">
+          Book now &rarr;
+        </a>
+        <button class="sticky-cta__dismiss" id="sticky-dismiss" aria-label="Dismiss">&#x2715;</button>
       </div>
     </div>
-  </footer>
 
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
-  <script>
-    'use strict';
+    <!-- ============================================================
+       FOOTER
+    ============================================================ -->
+    <footer class="footer" aria-label="Site footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__brand">
+            <span class="footer__logo">Vault Marketing<span class="footer__logo-dot" aria-hidden="true"></span></span>
+            <p class="footer__tagline">Marketing that pays for itself. Built for Canadian businesses who are done guessing.</p>
+          </div>
+          <div>
+            <p class="footer__col-title">Navigate</p>
+            <ul class="footer__links" role="list">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#results">Results</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer__col-title">Get started</p>
+            <ul class="footer__links" role="list">
+              <li><a href="https://calendly.com/rohan-vaultmarketing/free-growth-audit-strategy-call" target="_blank" rel="noopener noreferrer">Book a free call</a></li>
+              <li><a href="mailto:rohan@vaultmarketing.in">Email us</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copy">&copy; 2025 Vault Marketing &mdash; Calgary, Alberta, Canada</p>
+          <p class="footer__note">Marketing that pays for itself.</p>
+        </div>
+      </div>
+    </footer>
 
-    /* ── Sticky nav ── */
-    (function () {
-      var nav = document.getElementById('nav');
-      function tick() {
-        if (window.scrollY > 36) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
-      }
-      window.addEventListener('scroll', tick, { passive: true });
-      tick();
-    }());
+    <script>
+      /* Nav scroll state */
+      const nav = document.getElementById('nav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
-    /* ── Scroll reveal ── */
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!els.length || !('IntersectionObserver' in window)) {
-        // Fallback: show all immediately
-        els.forEach(function (el) { el.classList.add('visible'); });
-        return;
-      }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    }());
+      /* Scroll reveal */
+      const revealEls = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
 
-    /* ── FAQ accordion ── */
-    (function () {
-      var items = document.querySelectorAll('.faq-item');
-      items.forEach(function (item) {
-        var btn  = item.querySelector('.faq-item__btn');
-        var body = item.querySelector('.faq-item__body');
-        if (!btn || !body) return;
-
-        btn.addEventListener('click', function () {
-          var isOpen = item.classList.contains('open');
-
-          // Close all
-          items.forEach(function (other) {
-            other.classList.remove('open');
-            var ob = other.querySelector('.faq-item__btn');
-            if (ob) ob.setAttribute('aria-expanded', 'false');
+      /* Accordion (diff + faq shared pattern) */
+      document.querySelectorAll('.diff__btn, .faq__btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.diff__item, .faq__item');
+          const isOpen = item.classList.contains('open');
+          item.closest('.diff__list, .faq__list').querySelectorAll('.diff__item.open, .faq__item.open').forEach(open => {
+            open.classList.remove('open');
+            open.querySelector('[aria-expanded]').setAttribute('aria-expanded', 'false');
           });
-
-          // Toggle this one
           if (!isOpen) {
             item.classList.add('open');
             btn.setAttribute('aria-expanded', 'true');
           }
         });
       });
-    }());
 
-    /* ── Smooth scroll for internal anchor links ── */
-    (function () {
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          var id = this.getAttribute('href');
-          if (id === '#') return;
-          var target = document.querySelector(id);
-          if (!target) return;
-          e.preventDefault();
-          var navH = document.getElementById('nav').offsetHeight;
-          var top  = target.getBoundingClientRect().top + window.scrollY - navH - 16;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        });
+      /* Sticky CTA */
+      const stickyCta = document.getElementById('sticky-cta');
+      const dismissBtn = document.getElementById('sticky-dismiss');
+      let stickyDismissed = false;
+
+      const toggleSticky = () => {
+        if (stickyDismissed) return;
+        const scrolled = window.scrollY > 600;
+        const nearBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200;
+        stickyCta.classList.toggle('visible', scrolled && !nearBottom);
+      };
+      window.addEventListener('scroll', toggleSticky, { passive: true });
+
+      dismissBtn.addEventListener('click', () => {
+        stickyDismissed = true;
+        stickyCta.classList.remove('visible');
       });
-    }());
-  </script>
 
-</body>
+      /* Contact form */
+      const form = document.getElementById('contact-form');
+      const formBody = document.getElementById('contact-form-body');
+      const formSuccess = document.getElementById('form-success');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        /* Send to Formspree or similar — update action URL as needed */
+        const action = form.getAttribute('action');
+        if (action) {
+          fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+            .then(r => { if (r.ok) showSuccess(); })
+            .catch(() => showSuccess());
+        } else {
+          /* Fallback: open Calendly if no form backend configured */
+          showSuccess();
+        }
+      });
+
+      function showSuccess() {
+        formBody.querySelector('form').style.display = 'none';
+        formSuccess.classList.add('visible');
+      }
+    </script>
+  </body>
 </html>
