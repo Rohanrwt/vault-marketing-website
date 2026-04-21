@@ -28,11 +28,11 @@
 <!-- ── CONTENT SECURITY POLICY ── -->
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'self';
-           style-src 'self' https://fonts.googleapis.com;
+           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
            font-src https://fonts.gstatic.com;
-           script-src 'self';
-           connect-src 'self' https://formspree.io;
-           img-src 'self' data:;">
+           script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com;
+           connect-src 'self' https://formspree.io https://www.facebook.com;
+           img-src 'self' data: https://www.facebook.com;">
 
 <!-- ── FONT PERFORMANCE (PRELOADED) ── -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" as="style">

@@ -32,6 +32,15 @@
 <!-- ── STYLESHEET ── -->
 <link rel="stylesheet" href="css/style.css">
 
+<!-- ── CONTENT SECURITY POLICY ── -->
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'self';
+           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+           font-src https://fonts.gstatic.com;
+           script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com;
+           connect-src 'self' https://formspree.io https://www.facebook.com;
+           img-src 'self' data: https://www.facebook.com;">
+
 <!-- ── CANONICAL & SITEMAP ── -->
 <link rel="canonical" href="https://vaultmarketing.in/real-estate-marketing-agency-gurugram">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">

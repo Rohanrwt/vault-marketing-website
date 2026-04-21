@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vault Marketing — Digital Marketing for Canadian Businesses</title>
+  <meta name="description" content="SEO, Google Ads, Meta Ads, and conversion-focused websites for Canadian small businesses. Real results, honest reporting, no lock-in. Serving Calgary and all of Canada.">
+  <meta property="og:title" content="Vault Marketing — Digital Marketing for Canadian Businesses">
+  <meta property="og:description" content="Marketing that pays for itself. Real Calgary results — SEO, paid ads, and websites built to generate leads.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; }
+
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --bg:            #f4f1ea;
+      --bg-alt:        #ede8dc;
+      --bg-dark:       #1a1915;
+      --bg-dark-2:     #201e19;
+
+      --ink:           #1a1915;
+      --ink-muted:     #6a6560;
+      --ink-faint:     #a8a29c;
+      --ink-light:     #f4f1ea;
+      --ink-light-mid: rgba(244,241,234,0.70);
+      --ink-light-low: rgba(244,241,234,0.40);
+
+      --accent:        #c24b25;
+      --accent-dark:   #a03d1d;
+      --accent-glow:   rgba(194,75,37,0.18);
+
+      --border:        rgba(26,25,21,0.11);
+      --border-dark:   rgba(244,241,234,0.10);
+
+      --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-sans:  'Instrument Sans', 'Helvetica Neue', system-ui, sans-serif;
+
+      --nav-h:    72px;
+      --pad:      clamp(1.25rem, 5vw, 3rem);
+      --max-w:    1160px;
+
+      --r-sm:   6px;
+      --r-md:   12px;
+      --r-pill: 100px;
+
+      --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-inout:  cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================================
+       BASE
+    ============================================================ */
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Noise overlay — kills "plastic" feel */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: var(--pad);
+    }
+
+    .section-label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .accent-i {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s var(--ease-out), transform 0.72s var(--ease-out);
+    }
+    .reveal.visible            { opacity: 1; transform: translateY(0); }
+    .reveal.d1                 { transition-delay: 0.10s; }
+    .reveal.d2                 { transition-delay: 0.20s; }
+    .reveal.d3                 { transition-delay: 0.30s; }
+    .reveal.d4                 { transition-delay: 0.40s; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.35s var(--ease-inout),
+                  border-color 0.35s var(--ease-inout),
+                  backdrop-filter 0.35s;
+    }
+    .nav.scrolled {
+      background: rgba(244,241,234,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom-color: var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .nav__logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      letter-spacing: -0.01em;
+    }
+    .nav__logo-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .nav__links {
+      display: none;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) { .nav__links { display: flex; } }
+    .nav__links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav__links a:hover { color: var(--accent); }
+
+    .nav__cta {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--ink);
+      color: var(--ink-light);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1.2rem;
+      border-radius: var(--r-pill);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    @media (min-width: 560px) { .nav__cta { display: inline-flex; } }
+    .nav__cta:hover { background: var(--accent); }
+
+    .nav__cta-mobile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--ink);
+      color: var(--ink-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--r-pill);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    @media (min-width: 560px) { .nav__cta-mobile { display: none; } }
+    .nav__cta-mobile:hover { background: var(--accent); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      padding-top:    calc(var(--nav-h) + clamp(3.5rem, 11vw, 7rem));
+      padding-bottom: clamp(4.5rem, 12vw, 9rem);
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(26,25,21,0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+      padding: 0.38rem 0.95rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+    }
+    .hero__eyebrow-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      animation: dot-pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes dot-pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.55; transform:scale(0.75); }
+    }
+    .hero__h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.022em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      max-width: 850px;
+    }
+    .hero__sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.7;
+      color: var(--ink-muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+    }
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Primary dark pill button */
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--ink);
+      color: var(--ink-light);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--r-pill);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-dark .arrow { display:inline-block; transition: transform 0.25s var(--ease-out); }
+    .btn-dark:hover  { background: var(--accent); }
+    .btn-dark:hover .arrow { transform: translateX(5px); }
+
+    /* Accent pill button */
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0.95rem 2rem;
+      border-radius: var(--r-pill);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-accent .arrow { display:inline-block; transition: transform 0.25s var(--ease-out); }
+    .btn-accent:hover  { background: var(--accent-dark); }
+    .btn-accent:hover .arrow { transform: translateX(5px); }
+
+    .link-underline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .link-underline:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero__trusted {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .hero__trusted-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .hero__trusted-sep { color: var(--ink-faint); }
+    .hero__trusted-names {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+
+    /* ============================================================
+       MARQUEE
+    ============================================================ */
+    .marquee-wrap {
+      background: var(--bg-dark);
+      padding-block: 1.2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 6rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-wrap::before { left:0;  background: linear-gradient(to right, var(--bg-dark), transparent); }
+    .marquee-wrap::after  { right:0; background: linear-gradient(to left,  var(--bg-dark), transparent); }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+      animation: marquee-run 28s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee-run {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-set {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+    }
+    .marquee-set span {
+      white-space: nowrap;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: rgba(244,241,234,0.62);
+      padding-inline: 1.5rem;
+    }
+    .marquee-set .orn {
+      color: var(--accent);
+      font-size: 0.65rem;
+      padding-inline: 0;
+      opacity: 0.9;
+    }
+
+    /* ============================================================
+       PROBLEM SECTION
+    ============================================================ */
+    .problem {
+      padding-block: clamp(5rem, 12vw, 9rem);
+      border-bottom: 1px solid var(--border);
+    }
+    .problem__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) {
+      .problem__grid {
+        grid-template-columns: 1fr 1.45fr;
+        gap: 5.5rem;
+        align-items: start;
+      }
+    }
+    .problem__label { margin-bottom: 1.25rem; }
+    .problem__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.016em;
+      color: var(--ink);
+    }
+    .problem__intro {
+      font-size: 1.02rem;
+      color: var(--ink-muted);
+      line-height: 1.72;
+      margin-bottom: 1.75rem;
+    }
+    .problem__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .problem__item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      font-size: 1rem;
+      line-height: 1.62;
+    }
+    .problem__dash {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.62;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .problem__close {
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+    }
+    .problem__close strong { color: var(--ink); font-weight: 600; }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services {
+      padding-block: clamp(5rem, 12vw, 9rem);
+      border-bottom: 1px solid var(--border);
+    }
+    .services__hdr { margin-bottom: 4rem; }
+    .services__hdr .section-label { margin-bottom: 1rem; }
+    .services__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.016em;
+      line-height: 1.2;
+    }
+    .services__cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    @media (min-width: 768px) {
+      .services__cols { grid-template-columns: repeat(3,1fr); }
+    }
+    .svc {
+      padding: 0 0 2.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2.5rem;
+      transition: background 0.22s;
+    }
+    @media (min-width: 768px) {
+      .svc {
+        padding: 0 2.25rem 0;
+        border-top: none;
+        border-left: 1px solid var(--border);
+        margin-top: 0;
+      }
+      .svc:first-child { border-left: none; padding-left: 0; }
+      .svc:last-child  { padding-right: 0; }
+    }
+    .svc__lbl {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .svc__h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .svc__desc {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      line-height: 1.68;
+      margin-bottom: 1.5rem;
+    }
+    .svc__bullets { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .svc__bullet  {
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+    .svc__bullet-dash { color: var(--accent); font-weight: 700; flex-shrink: 0; user-select: none; }
+
+    /* ============================================================
+       CASE STUDIES
+    ============================================================ */
+    .work {
+      background: var(--bg-dark);
+      padding-block: clamp(5rem, 12vw, 9rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .work__hdr { margin-bottom: 3.5rem; }
+    .work__hdr .section-label { color: var(--ink-light-low); margin-bottom: 1rem; }
+    .work__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.016em;
+      line-height: 1.2;
+      color: var(--ink-light);
+    }
+    .work__cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .work__cards { grid-template-columns: repeat(2,1fr); gap: 2rem; }
+    }
+    .case-card {
+      background: rgba(244,241,234,0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--r-md);
+      padding: clamp(1.75rem, 4vw, 2.5rem);
+    }
+    .case-card__location {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light-low);
+      margin-bottom: 1.75rem;
+    }
+    .case-card__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .stat__num {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    .stat__lbl {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--ink-light-low);
+    }
+
+    /*
+      VIDEO SWAP ZONE — see comment below each .case-card__testimonial.
+      When video testimonials are ready, replace the entire
+      .case-card__testimonial div with a <video> element:
+
+      <video controls poster="[THUMB_URL]" style="width:100%;border-radius:6px;margin-top:0.5rem">
+        <source src="[VIDEO_URL]" type="video/mp4">
+      </video>
+    */
+    .case-card__testimonial {
+      padding-left: 1.1rem;
+      border-left: 2px solid var(--accent);
+    }
+    .case-card__quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--ink-light-mid);
+      margin-bottom: 0.85rem;
+    }
+    .case-card__author {
+      font-size: 0.82rem;
+      color: var(--ink-light-low);
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    .process {
+      padding-block: clamp(5rem, 12vw, 9rem);
+      border-bottom: 1px solid var(--border);
+    }
+    .process__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) {
+      .process__grid {
+        grid-template-columns: 1fr 1.55fr;
+        gap: 6rem;
+        align-items: start;
+      }
+    }
+    .process__lbl { margin-bottom: 1.25rem; }
+    .process__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.016em;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .process__support {
+      font-size: 0.97rem;
+      color: var(--ink-muted);
+      line-height: 1.68;
+    }
+    .process__steps { list-style: none; display: flex; flex-direction: column; }
+    .step {
+      display: grid;
+      grid-template-columns: 2.75rem 1fr;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding-block: 1.75rem;
+      border-bottom: 1px solid var(--border);
+      cursor: default;
+      transition: transform 0.25s var(--ease-out);
+    }
+    .step:first-child { padding-top: 0; }
+    .step:last-child  { border-bottom: none; }
+    .step:hover       { transform: translateX(7px); }
+    .step__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      opacity: 0.88;
+    }
+    .step__h3 {
+      font-family: var(--font-serif);
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+    .step__desc {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      line-height: 1.68;
+    }
+
+    /* ============================================================
+       WHY US
+    ============================================================ */
+    .why {
+      background: var(--bg-alt);
+      padding-block: clamp(5rem, 12vw, 9rem);
+      border-bottom: 1px solid var(--border);
+    }
+    .why__hdr { margin-bottom: 3.5rem; }
+    .why__hdr .section-label { margin-bottom: 1rem; }
+    .why__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.016em;
+      line-height: 1.2;
+    }
+    .why__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 600px) { .why__grid { grid-template-columns: repeat(2,1fr); } }
+    .why-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 1.85rem 1.75rem;
+    }
+    .why-card__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+    .why-card__h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.55rem;
+    }
+    .why-card__p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.68;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq { padding-block: clamp(5rem, 12vw, 9rem); border-bottom: 1px solid var(--border); }
+    .faq__hdr { text-align: center; margin-bottom: 3.5rem; }
+    .faq__hdr .section-label { margin-bottom: 1rem; }
+    .faq__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.016em;
+      line-height: 1.2;
+    }
+    .faq__list {
+      max-width: 700px;
+      margin-inline: auto;
+    }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .faq-item__btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1.45rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .faq-item__btn:hover { color: var(--accent); }
+
+    .faq-icon {
+      width: 22px; height: 22px;
+      flex-shrink: 0;
+      position: relative;
+      border: 1.5px solid var(--border);
+      border-radius: 50%;
+      transition: border-color 0.2s, transform 0.32s var(--ease-out);
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      background: currentColor;
+    }
+    .faq-icon::before { width: 9px; height: 1.5px; }
+    .faq-icon::after  {
+      width: 1.5px; height: 9px;
+      transition: transform 0.32s var(--ease-out);
+    }
+    .faq-item.open .faq-icon { border-color: var(--accent); transform: rotate(45deg); }
+
+    .faq-item__body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.42s var(--ease-out);
+    }
+    .faq-item.open .faq-item__body { max-height: 400px; }
+    .faq-item__ans {
+      padding-bottom: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      line-height: 1.72;
+    }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    .final-cta {
+      background: var(--bg-dark);
+      padding-block: clamp(5rem, 12vw, 9rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Soft radial glow from top-right corner */
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -15%; right: -8%;
+      width: 55vw; height: 55vw;
+      max-width: 640px; max-height: 640px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .final-cta__inner { position: relative; z-index: 1; }
+    .final-cta__lbl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ink-light-low);
+      margin-bottom: 1.5rem;
+    }
+    .final-cta__h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 5.5vw, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -0.022em;
+      line-height: 1.1;
+      color: var(--ink-light);
+      margin-bottom: 1.25rem;
+    }
+    .final-cta__sub {
+      font-size: 1.02rem;
+      color: var(--ink-light-mid);
+      line-height: 1.68;
+      max-width: 500px;
+      margin-inline: auto;
+      margin-bottom: 2.5rem;
+    }
+    .final-cta__btn-wrap { margin-bottom: 1.5rem; }
+    .final-cta__checks {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.5rem;
+      font-size: 0.8rem;
+      color: var(--ink-light-low);
+    }
+    .final-cta__check::before { content: '✓'; color: var(--accent); margin-right: 0.35rem; font-weight: 700; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(244,241,234,0.07);
+      padding-block: 3rem 2rem;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 600px) {
+      .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    }
+    .footer__logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 0.75rem;
+    }
+    .footer__logo .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .footer__blurb {
+      font-size: 0.88rem;
+      color: var(--ink-light-mid);
+      line-height: 1.68;
+      max-width: 260px;
+    }
+    .footer__col-h {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light-low);
+      margin-bottom: 1rem;
+    }
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer__links a {
+      font-size: 0.88rem;
+      color: var(--ink-light-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer__links a:hover { color: var(--ink-light); }
+    .footer__bottom {
+      border-top: 1px solid rgba(244,241,234,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .footer__copy,
+    .footer__note {
+      font-size: 0.78rem;
+      color: rgba(244,241,234,0.28);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+
+        <a href="#home" class="nav__logo" aria-label="Vault Marketing — home">
+          Vault Marketing<span class="nav__logo-dot" aria-hidden="true"></span>
+        </a>
+
+        <ul class="nav__links" role="list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <a href="[CALENDLY_LINK_PLACEHOLDER]" class="nav__cta" target="_blank" rel="noopener noreferrer">
+          Book a call <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="[CALENDLY_LINK_PLACEHOLDER]" class="nav__cta-mobile" target="_blank" rel="noopener noreferrer">
+          Book a call
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            Now serving Calgary &amp; all of Canada
+          </span>
+        </div>
+
+        <h1 class="hero__h1 reveal d1">
+          Marketing that pays<br>for itself.
+          <em class="accent-i">Built for<br>Canadian businesses.</em>
+        </h1>
+
+        <p class="hero__sub reveal d2">
+          SEO, Google &amp; Meta ads, and conversion-focused websites. Run by a team that treats your ad spend like our own. No jargon, no monthly dashboards nobody reads. Just leads, calls, and bookings.
+        </p>
+
+        <div class="hero__ctas reveal d3">
+          <a href="[CALENDLY_LINK_PLACEHOLDER]" class="btn-dark" target="_blank" rel="noopener noreferrer">
+            Book a free strategy call <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#work" class="link-underline">See our Calgary results</a>
+        </div>
+
+        <div class="hero__trusted reveal d4">
+          <span class="hero__trusted-label">Trusted by</span>
+          <span class="hero__trusted-names">
+            <em>Adspotless</em><span class="hero__trusted-sep"> · </span><em>Glam Detailing</em>
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE
+    ============================================================ -->
+    <div class="marquee-wrap" aria-hidden="true" role="presentation">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <div class="marquee-set">
+          <span>SEO that ranks</span><span class="orn">✦</span>
+          <span>Google Ads that convert</span><span class="orn">✦</span>
+          <span>Meta Ads with real ROAS</span><span class="orn">✦</span>
+          <span>Websites that sell</span><span class="orn">✦</span>
+          <span>Honest reporting, always</span><span class="orn">✦</span>
+          <span>Real humans, real results</span><span class="orn">✦</span>
+          <span>No lock-in contracts</span><span class="orn">✦</span>
+          <span>Founder-led service</span><span class="orn">✦</span>
+          <span>Calgary-tested playbook</span><span class="orn">✦</span>
+        </div>
+        <!-- Set 2 — duplicate for seamless loop -->
+        <div class="marquee-set" aria-hidden="true">
+          <span>SEO that ranks</span><span class="orn">✦</span>
+          <span>Google Ads that convert</span><span class="orn">✦</span>
+          <span>Meta Ads with real ROAS</span><span class="orn">✦</span>
+          <span>Websites that sell</span><span class="orn">✦</span>
+          <span>Honest reporting, always</span><span class="orn">✦</span>
+          <span>Real humans, real results</span><span class="orn">✦</span>
+          <span>No lock-in contracts</span><span class="orn">✦</span>
+          <span>Founder-led service</span><span class="orn">✦</span>
+          <span>Calgary-tested playbook</span><span class="orn">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PROBLEM SECTION
+    ============================================================ -->
+    <section class="problem" id="problem" aria-label="The honest truth">
+      <div class="container">
+        <div class="problem__grid">
+
+          <div class="reveal">
+            <span class="section-label problem__label">The honest truth</span>
+            <h2 class="problem__h2">
+              You've probably been <em class="accent-i">burned</em> by an agency before.
+            </h2>
+          </div>
+
+          <div class="reveal d1">
+            <p class="problem__intro">
+              The pitch sounds familiar. Big results. Proven process. Dedicated team. Then the invoices climb and the leads don't follow.
+            </p>
+            <ul class="problem__list" role="list">
+              <li class="problem__item">
+                <span class="problem__dash" aria-hidden="true">—</span>
+                <span>Big promises, invoices that climb, results that don't.</span>
+              </li>
+              <li class="problem__item">
+                <span class="problem__dash" aria-hidden="true">—</span>
+                <span>Monthly reports full of charts that don't tie back to revenue.</span>
+              </li>
+              <li class="problem__item">
+                <span class="problem__dash" aria-hidden="true">—</span>
+                <span>An agency that disappears after the first three months.</span>
+              </li>
+              <li class="problem__item">
+                <span class="problem__dash" aria-hidden="true">—</span>
+                <span>A website that looks fine but never actually brings leads.</span>
+              </li>
+            </ul>
+            <div class="problem__close">
+              <strong>We do the opposite.</strong> We tie everything we do back to one number: how many qualified leads you got this month, and what they cost.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section class="services" id="services" aria-label="Services">
+      <div class="container">
+
+        <div class="services__hdr reveal">
+          <span class="section-label">What we do</span>
+          <h2 class="services__h2">Three services.<br>One goal: more qualified leads.</h2>
+        </div>
+
+        <div class="services__cols">
+
+          <div class="svc reveal">
+            <span class="svc__lbl">Service 01</span>
+            <h3 class="svc__h3">Search Engine Optimization</h3>
+            <p class="svc__desc">
+              Get found by people already searching for what you offer — in Calgary and across Canada. Organic traffic that compounds over time, not a tap you have to keep paying to turn on.
+            </p>
+            <ul class="svc__bullets" role="list">
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Local SEO for Calgary &amp; beyond</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Technical audits &amp; fixes</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Content that ranks and converts</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Transparent monthly reporting</span></li>
+            </ul>
+          </div>
+
+          <div class="svc reveal d1">
+            <span class="svc__lbl">Service 02</span>
+            <h3 class="svc__h3">Google &amp; Meta Ads</h3>
+            <p class="svc__desc">
+              Paid ads that generate leads in weeks, not months. We manage your campaigns, write your copy, build your landing pages, and optimize relentlessly. Your budget stays in your account — always.
+            </p>
+            <ul class="svc__bullets" role="list">
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Google Search &amp; Performance Max</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Meta (Facebook &amp; Instagram) Ads</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Conversion tracking &amp; attribution</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Weekly optimization, not monthly check-ins</span></li>
+            </ul>
+          </div>
+
+          <div class="svc reveal d2">
+            <span class="svc__lbl">Service 03</span>
+            <h3 class="svc__h3">Websites that convert</h3>
+            <p class="svc__desc">
+              A site that looks great but doesn't generate leads is just an expensive brochure. We build fast, clean websites engineered from the first pixel for one purpose: turning visitors into paying customers.
+            </p>
+            <ul class="svc__bullets" role="list">
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Conversion-focused design &amp; copy</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Fast-loading, mobile-first builds</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>A/B testing &amp; CRO</span></li>
+              <li class="svc__bullet"><span class="svc__bullet-dash" aria-hidden="true">—</span><span>Analytics &amp; heat mapping</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CASE STUDIES
+    ============================================================ -->
+    <section class="work" id="work" aria-label="Client results">
+      <div class="container">
+
+        <div class="work__hdr reveal">
+          <span class="section-label">Client results</span>
+          <h2 class="work__h2">
+            Real Calgary businesses. <em class="accent-i">Real numbers.</em>
+          </h2>
+        </div>
+
+        <div class="work__cards">
+
+          <!-- ── Card 1: Adspotless ── -->
+          <article class="case-card reveal" aria-label="Adspotless case study">
+            <p class="case-card__location">Adspotless &mdash; Calgary, AB &nbsp;·&nbsp; Auto Detailing</p>
+
+            <div class="case-card__stats">
+              <!--
+                PLACEHOLDER: Replace [INSERT REAL STAT] with actual numbers.
+                Example: "↑ 3.2×" for the first stat, "↓ 42%" for the second.
+              -->
+              <div>
+                <div class="stat__num">↑ [INSERT REAL STAT]×</div>
+                <div class="stat__lbl">Qualified leads</div>
+              </div>
+              <div>
+                <div class="stat__num">↓ [INSERT REAL STAT]%</div>
+                <div class="stat__lbl">Cost per lead</div>
+              </div>
+            </div>
+
+            <!--
+              VIDEO SWAP ZONE (Adspotless):
+              When the video testimonial is ready, delete the .case-card__testimonial
+              div below and replace it with something like:
+
+              <video controls poster="[THUMBNAIL_URL]"
+                     style="width:100%;border-radius:8px;margin-top:0.25rem">
+                <source src="[VIDEO_FILE_URL]" type="video/mp4">
+              </video>
+            -->
+            <div class="case-card__testimonial">
+              <blockquote class="case-card__quote">
+                "[INSERT VERBATIM TESTIMONIAL FROM ADSPOTLESS — paste the exact quote from your client here. Aim for 2–4 sentences that speak to real, specific results.]"
+              </blockquote>
+              <cite class="case-card__author">— Owner, Adspotless &nbsp;·&nbsp; adspotless.ca</cite>
+            </div>
+          </article>
+
+          <!-- ── Card 2: Glam Detailing ── -->
+          <article class="case-card reveal d1" aria-label="Glam Detailing case study">
+            <p class="case-card__location">Glam Detailing &mdash; Calgary, AB &nbsp;·&nbsp; Auto Detailing</p>
+
+            <div class="case-card__stats">
+              <!--
+                PLACEHOLDER: Replace [INSERT REAL STAT] with actual numbers.
+                Example: "↑ 4×" for organic traffic, "Top 3" for keyword positions.
+              -->
+              <div>
+                <div class="stat__num">↑ [INSERT REAL STAT]×</div>
+                <div class="stat__lbl">Organic traffic</div>
+              </div>
+              <div>
+                <div class="stat__num">[INSERT REAL STAT]</div>
+                <div class="stat__lbl">Keywords ranked</div>
+              </div>
+            </div>
+
+            <!--
+              VIDEO SWAP ZONE (Glam Detailing):
+              When the video testimonial is ready, delete the .case-card__testimonial
+              div below and replace it with a <video> element (see Adspotless above).
+            -->
+            <div class="case-card__testimonial">
+              <blockquote class="case-card__quote">
+                "[INSERT VERBATIM TESTIMONIAL FROM GLAM DETAILING — paste the exact quote from your client here. Aim for 2–4 sentences that speak to real, specific results.]"
+              </blockquote>
+              <cite class="case-card__author">— Owner, Glam Detailing &nbsp;·&nbsp; glamdetailing.com</cite>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROCESS
+    ============================================================ -->
+    <section class="process" id="process" aria-label="How we work">
+      <div class="container">
+        <div class="process__grid">
+
+          <div class="reveal">
+            <span class="section-label process__lbl">How we work</span>
+            <h2 class="process__h2">
+              A simple, <em class="accent-i">no-surprises</em> process.
+            </h2>
+            <p class="process__support">
+              No onboarding decks, no 12-step sales cycles. Here's exactly what happens when you work with us.
+            </p>
+          </div>
+
+          <ol class="process__steps" role="list">
+            <li class="step reveal">
+              <span class="step__num" aria-hidden="true">1.</span>
+              <div>
+                <h3 class="step__h3">Free strategy call</h3>
+                <p class="step__desc">30 minutes. We learn your business, look at what you've tried, and tell you honestly if we can help — or if you'd be better off with someone else.</p>
+              </div>
+            </li>
+            <li class="step reveal d1">
+              <span class="step__num" aria-hidden="true">2.</span>
+              <div>
+                <h3 class="step__h3">Custom game plan</h3>
+                <p class="step__desc">Within a week you get a written plan: the channels we'd focus on, the budget split, the timeline, and the numbers we'll be accountable to.</p>
+              </div>
+            </li>
+            <li class="step reveal d2">
+              <span class="step__num" aria-hidden="true">3.</span>
+              <div>
+                <h3 class="step__h3">Build &amp; launch</h3>
+                <p class="step__desc">We build what needs building — pages, ad creative, tracking — and launch in weeks, not months.</p>
+              </div>
+            </li>
+            <li class="step reveal d3">
+              <span class="step__num" aria-hidden="true">4.</span>
+              <div>
+                <h3 class="step__h3">Optimize &amp; scale</h3>
+                <p class="step__desc">Weekly optimization, monthly reviews, quarterly strategy. We scale what's working and cut what isn't — fast.</p>
+              </div>
+            </li>
+          </ol>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY US
+    ============================================================ -->
+    <section class="why" id="why" aria-label="Why Vault">
+      <div class="container">
+
+        <div class="why__hdr reveal">
+          <span class="section-label">Why Vault</span>
+          <h2 class="why__h2">Built different on purpose.</h2>
+        </div>
+
+        <div class="why__grid">
+          <div class="why-card reveal">
+            <span class="why-card__num">i.</span>
+            <h3 class="why-card__h3">Calgary-tested</h3>
+            <p class="why-card__p">We already know what works in the Calgary market — because we're already doing it. No six-month learning curve on your dime.</p>
+          </div>
+          <div class="why-card reveal d1">
+            <span class="why-card__num">ii.</span>
+            <h3 class="why-card__h3">One team, all channels</h3>
+            <p class="why-card__p">Your SEO person talks to your ads person talks to your web person — because they sit next to each other. Nothing falls through the cracks.</p>
+          </div>
+          <div class="why-card reveal d2">
+            <span class="why-card__num">iii.</span>
+            <h3 class="why-card__h3">Honest reporting</h3>
+            <p class="why-card__p">No vanity metrics. Every report answers the same question: how many qualified leads did you get, and what did they cost?</p>
+          </div>
+          <div class="why-card reveal d3">
+            <span class="why-card__num">iv.</span>
+            <h3 class="why-card__h3">Founder-led service</h3>
+            <p class="why-card__p">You work directly with senior strategists, not a junior account manager. Your calls get returned the same day.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="faq" id="faq" aria-label="Frequently asked questions">
+      <div class="container">
+
+        <div class="faq__hdr reveal">
+          <span class="section-label">FAQ</span>
+          <h2 class="faq__h2">Questions we <em class="accent-i">actually</em> get.</h2>
+        </div>
+
+        <div class="faq__list reveal d1" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>Where is your team based?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">Our core team operates from India, which is how we offer senior-level work at rates that make sense for small and mid-sized Canadian businesses. Our Canadian clients work with us on their time zone, over Google Meet and email. We're always reachable during Calgary business hours.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>What do your engagements typically cost?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">Most retainers land between CAD $1,500 and $4,000 per month depending on scope. Ad spend is separate and paid directly to Google or Meta by you — we never touch your ad budget.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>How long until I see results?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">Paid ads can drive leads in the first 2–3 weeks. SEO is a 3–6 month build — anyone promising faster is selling you something that won't last.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>Are we locked into a long contract?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">No. Our standard engagement is month-to-month after an initial 90-day period. The 90 days gives us enough runway to show real results — after that, you stay because it's working.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>Do you work outside Calgary?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">Yes — we serve clients across Canada and are actively expanding. Our experience in Calgary means we understand the Canadian market well; the playbook translates.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__btn" aria-expanded="false">
+              <span>What industries do you work with?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__body" role="region">
+              <p class="faq-item__ans">We focus on local service businesses — detailing, cleaning, home services, trades, clinics, and similar. If you have customers in a specific area and a phone number you want ringing, we can help.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+    ============================================================ -->
+    <section class="final-cta" aria-label="Book a strategy call">
+      <div class="container">
+        <div class="final-cta__inner reveal">
+          <p class="final-cta__lbl">Ready when you are</p>
+          <h2 class="final-cta__h2">
+            Let's see if we're a fit.<br>
+            <em class="accent-i">30 minutes, no pitch.</em>
+          </h2>
+          <p class="final-cta__sub">
+            Book a free strategy call. We'll look at your current marketing, tell you what we'd change, and you decide if you want to work together. That's it.
+          </p>
+          <div class="final-cta__btn-wrap">
+            <a href="[CALENDLY_LINK_PLACEHOLDER]" class="btn-accent" target="_blank" rel="noopener noreferrer">
+              Book your free strategy call <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="final-cta__checks" aria-label="Guarantees">
+            <span class="final-cta__check">30-minute call</span>
+            <span class="final-cta__check">No obligation</span>
+            <span class="final-cta__check">Honest advice either way</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div>
+          <a href="#home" class="footer__logo" aria-label="Vault Marketing home">
+            Vault Marketing<span class="dot" aria-hidden="true"></span>
+          </a>
+          <p class="footer__blurb">
+            Digital marketing for Canadian small businesses. SEO, paid ads, and websites that generate leads — not just traffic.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-h">Services</p>
+          <ul class="footer__links" role="list">
+            <li><a href="#services">Search Engine Optimization</a></li>
+            <li><a href="#services">Google &amp; Meta Ads</a></li>
+            <li><a href="#services">Website Design</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-h">Company</p>
+          <ul class="footer__links" role="list">
+            <li><a href="#work">Case Studies</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <!--
+              PLACEHOLDER: Replace [EMAIL_PLACEHOLDER] with your actual contact email.
+              Example: hello@vaultmarketing.ca
+            -->
+            <li><a href="mailto:[EMAIL_PLACEHOLDER]">[EMAIL_PLACEHOLDER]</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Vault Marketing. All rights reserved.</p>
+        <p class="footer__note">Operating from India &nbsp;·&nbsp; Reachable on Calgary time</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    'use strict';
+
+    /* ── Sticky nav ── */
+    (function () {
+      var nav = document.getElementById('nav');
+      function tick() {
+        if (window.scrollY > 36) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', tick, { passive: true });
+      tick();
+    }());
+
+    /* ── Scroll reveal ── */
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length || !('IntersectionObserver' in window)) {
+        // Fallback: show all immediately
+        els.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }());
+
+    /* ── FAQ accordion ── */
+    (function () {
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        var btn  = item.querySelector('.faq-item__btn');
+        var body = item.querySelector('.faq-item__body');
+        if (!btn || !body) return;
+
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          items.forEach(function (other) {
+            other.classList.remove('open');
+            var ob = other.querySelector('.faq-item__btn');
+            if (ob) ob.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle this one
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    }());
+
+    /* ── Smooth scroll for internal anchor links ── */
+    (function () {
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = this.getAttribute('href');
+          if (id === '#') return;
+          var target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          var navH = document.getElementById('nav').offsetHeight;
+          var top  = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+    }());
+  </script>
+
+</body>
+</html>
