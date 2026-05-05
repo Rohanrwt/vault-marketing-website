@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:/Users/ANMOL/.claude/skills/arcads-external-api/prompting/prompt-library\")",
+      "Bash(mkdir -p \"C:/Users/ANMOL/.claude/skills/arcads-external-api/prompting/analyze-video\")",
+      "Bash(mkdir -p \"C:/Users/ANMOL/.claude/skills/arcads-external-api/prompting/clone-ad\")",
+      "Edit(~/.claude/skills/arcads-external-api/**)"
+    ]
+  }
+}

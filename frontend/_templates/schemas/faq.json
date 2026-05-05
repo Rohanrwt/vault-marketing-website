@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "[QUESTION 1 — phrase exactly as users search it]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[ANSWER 1 — direct, 2–4 sentences. Can include HTML links but keep it factual. No marketing fluff.]"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "[QUESTION 2]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[ANSWER 2]"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "[QUESTION 3]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[ANSWER 3]"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "[QUESTION 4]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[ANSWER 4]"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "[QUESTION 5]",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[ANSWER 5]"
+      }
+    }
+  ]
+}

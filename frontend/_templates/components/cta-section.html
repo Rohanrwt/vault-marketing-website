@@ -1,0 +1,80 @@
+<!--
+  CTA SECTION COMPONENT
+  =====================
+  Drop this before </body> on every service, case study, and blog page.
+  Update the heading, subtext, and button labels to match the page context.
+  The dark variant (default) works on all page types.
+  Add class="cta-section cta-light" for the light cream variant.
+
+  CTA link target:
+  - Primary button → Calendly / booking link (replace href)
+  - Secondary button → /contact.html or a specific service page
+-->
+
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+
+    <span class="cta-eyebrow">Ready to grow?</span>
+
+    <h2 class="cta-heading" id="cta-heading">
+      Let's get you <span>more clients.</span>
+    </h2>
+
+    <p class="cta-sub">
+      <!-- Customise this line per page. Keep it specific to what was just discussed. -->
+      <!-- Service pages: "Book a free strategy call. We'll audit your [channel] in 24 hours." -->
+      <!-- Case study pages: "Want results like [Client]? Let's talk." -->
+      <!-- Blog posts: "We use everything in this post for our clients. See it in action." -->
+      Book a free 30-minute strategy call. We'll come prepared with a specific audit of your current setup and three things you can fix this week.
+    </p>
+
+    <div class="cta-actions">
+      <a
+        href="https://cal.com/vaultmarketing"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Book a free strategy call with Vault Marketing"
+      >
+        Book a free call
+        <!-- Arrow icon -->
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <a
+        href="mailto:rohan@vaultmarketing.in"
+        class="btn-ghost"
+        aria-label="Email Rohan at Vault Marketing"
+      >
+        Or email us directly
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!--
+  PAGE-SPECIFIC VARIANTS:
+
+  Meta Ads service page:
+    Heading: "Ready to stop guessing and <span>start booking?</span>"
+    Sub: "We've run Meta Ads for detailers in Calgary and hospitality brands in India. Book a call and we'll show you what's working right now."
+    Primary CTA: "Get a free ads audit"
+
+  SEO service page:
+    Heading: "Want to rank where your <span>customers are searching?</span>"
+    Sub: "Whether it's Google or Gemini AI, we'll build the content and technical foundation that gets you found. No fluff, no lock-in."
+    Primary CTA: "Book your SEO strategy call"
+
+  Case study pages:
+    Heading: "Want results like <span>[Client Name]?</span>"
+    Sub: "We only work with a handful of clients at a time. If you're serious about growth, let's talk."
+    Primary CTA: "Apply to work with us"
+
+  Blog posts:
+    Heading: "We do this for our <span>clients every day.</span>"
+    Sub: "If you want to see this playbook applied to your business, book a free strategy call."
+    Primary CTA: "Book a free call"
+-->

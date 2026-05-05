@@ -1,0 +1,180 @@
+<!--
+  VAULT MARKETING — PAGE HEAD TEMPLATE
+  =====================================
+  Copy this entire <head> block into every new page.
+  Replace all [PLACEHOLDERS] before publishing.
+
+  PATHS: All asset paths use root-relative (/) — works correctly
+  from any subdirectory (e.g. /services/meta-ads-for-detailers/).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── FAVICON ── -->
+  <link rel="icon"            type="image/png" sizes="512x512" href="/assets/favicon.png" />
+  <link rel="icon"            type="image/png" sizes="192x192" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon"                                  href="/assets/favicon.png" />
+  <link rel="shortcut icon"                                     href="/assets/favicon.png" />
+
+  <!-- ── PRIMARY META ── -->
+  <!-- Title: ≤60 characters. Format: [Keyword] | Vault Marketing -->
+  <title>[PAGE TITLE ≤60 CHARS] | Vault Marketing</title>
+  <!-- Description: ≤155 characters. Lead with the outcome. -->
+  <meta name="description" content="[DESCRIPTION ≤155 CHARS]" />
+
+  <!-- ── CANONICAL ── -->
+  <!-- Always the full https URL, no trailing slash inconsistency -->
+  <link rel="canonical" href="https://vaultmarketing.in/[PATH]/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://vaultmarketing.in/[PATH]/" />
+  <meta property="og:title"       content="[OG TITLE — can match page title]" />
+  <meta property="og:description" content="[OG DESCRIPTION ≤155 CHARS]" />
+  <!-- OG image: 1200×630px. Place in /assets/og/[slug].jpg -->
+  <meta property="og:image"       content="https://vaultmarketing.in/assets/og/[SLUG].jpg" />
+  <meta property="og:site_name"   content="Vault Marketing" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="[TWITTER TITLE]" />
+  <meta name="twitter:description" content="[TWITTER DESCRIPTION ≤155 CHARS]" />
+  <meta name="twitter:image"       content="https://vaultmarketing.in/assets/og/[SLUG].jpg" />
+
+  <!-- ── JSON-LD SCHEMA ── -->
+  <!--
+    ALWAYS include: WebSite + Organization on every page.
+    ADD page-specific schema on top (Service / Article / FAQPage / BreadcrumbList).
+    See _templates/schemas/ for each schema type.
+  -->
+
+  <!-- WebSite schema — sitelinks search box signal -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vault Marketing",
+    "url": "https://vaultmarketing.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://vaultmarketing.in/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Organization schema — brand entity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vault Marketing",
+    "url": "https://vaultmarketing.in",
+    "logo": "https://vaultmarketing.in/assets/favicon.png",
+    "email": "rohan@vaultmarketing.in",
+    "founder": { "@type": "Person", "name": "Rohan Rawat" },
+    "foundingLocation": { "@type": "Place", "name": "Dehradun, India" },
+    "areaServed": ["India", "Canada"],
+    "sameAs": [
+      "https://www.instagram.com/vaultmarketing.in"
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList schema — copy from _templates/schemas/breadcrumb.json and fill in -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vaultmarketing.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "[PARENT SECTION]",
+        "item": "https://vaultmarketing.in/[PARENT-PATH]/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "[THIS PAGE NAME]",
+        "item": "https://vaultmarketing.in/[FULL-PATH]/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- PAGE-SPECIFIC SCHEMA: paste here (Service / Article / FAQPage / CaseStudy) -->
+
+  <!-- ── CONTENT SECURITY POLICY ── -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com https://datafa.st;
+             connect-src 'self' https://formspree.io https://www.facebook.com;
+             img-src 'self' data: https://www.facebook.com;" />
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap"
+    as="style" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- ── STYLES ── -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- If this page needs extra styles, add a page-specific stylesheet: -->
+  <!-- <link rel="stylesheet" href="/css/[page-slug].css" /> -->
+
+  <!-- ── NOSCRIPT FALLBACK ── -->
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+  <!-- ── ANALYTICS ── -->
+
+  <!-- DataFa.st (active) -->
+  <script defer
+    data-website-id="dfid_mKr9s1zVSm6gmfViB7bKS"
+    data-domain="vaultmarketing.in"
+    src="https://datafa.st/js/script.js"></script>
+
+  <!-- Google Analytics 4 — [ROHAN: REPLACE G-XXXXXXXXXX with your GA4 Measurement ID] -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Meta Pixel (ID: 815520877561066 — already verified) -->
+  <script defer>
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq)return; n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[];
+      t=b.createElement(e); t.async=!0; t.src=v;
+      s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
+    })(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','815520877561066');
+    fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=815520877561066&ev=PageView&noscript=1" />
+  </noscript>
+
+</head>

@@ -1,0 +1,82 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Case Study",
+
+    "headline": "[CASE STUDY TITLE — e.g. How We Got Glam Detailing Ranked #1 on Gemini AI]",
+    "description": "[1–2 sentence summary of the result and client]",
+    "url": "https://vaultmarketing.in/case-studies/[SLUG]/",
+    "mainEntityOfPage": "https://vaultmarketing.in/case-studies/[SLUG]/",
+
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://vaultmarketing.in/assets/og/[SLUG].jpg",
+      "width": 1200,
+      "height": 630
+    },
+
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]",
+
+    "author": {
+      "@type": "Person",
+      "name": "Rohan Rawat",
+      "url": "https://vaultmarketing.in/about/"
+    },
+
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vault Marketing",
+      "url": "https://vaultmarketing.in",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vaultmarketing.in/assets/favicon.png"
+      }
+    },
+
+    "about": {
+      "@type": "Service",
+      "name": "[SERVICE USED — e.g. AI Search Optimization + Technical SEO]",
+      "provider": {
+        "@type": "Organization",
+        "name": "Vault Marketing"
+      }
+    },
+
+    "keywords": "[KEYWORDS — e.g. AI SEO, Gemini AI ranking, auto detailer marketing]"
+  },
+
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+
+    "name": "[CASE STUDY TITLE — same as Article headline above]",
+
+    "reviewBody": "[CLIENT QUOTE — replace with real quote once obtained]",
+
+    "author": {
+      "@type": "Person",
+      "name": "[CLIENT NAME — e.g. Glam Detailing Owner]"
+    },
+
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "Vault Marketing — [SERVICE NAME]",
+      "url": "https://vaultmarketing.in/services/[SERVICE-SLUG]/"
+    },
+
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vault Marketing",
+      "url": "https://vaultmarketing.in"
+    }
+  }
+]

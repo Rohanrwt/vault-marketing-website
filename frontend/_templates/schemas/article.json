@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+
+  "headline": "[POST TITLE ≤110 CHARS]",
+  "description": "[POST META DESCRIPTION ≤155 CHARS]",
+  "url": "https://vaultmarketing.in/blog/[SLUG]/",
+  "mainEntityOfPage": "https://vaultmarketing.in/blog/[SLUG]/",
+
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://vaultmarketing.in/assets/og/[SLUG].jpg",
+    "width": 1200,
+    "height": 630
+  },
+
+  "datePublished": "[YYYY-MM-DD]",
+  "dateModified": "[YYYY-MM-DD]",
+
+  "author": {
+    "@type": "Person",
+    "name": "Rohan Rawat",
+    "url": "https://vaultmarketing.in/about/",
+    "sameAs": ["https://www.instagram.com/vaultmarketing.in"]
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vault Marketing",
+    "url": "https://vaultmarketing.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vaultmarketing.in/assets/favicon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+
+  "keywords": "[COMMA-SEPARATED KEYWORDS]",
+  "articleSection": "[SECTION — e.g. SEO, Meta Ads, AI Search, Hospitality]",
+  "wordCount": "[APPROXIMATE WORD COUNT — e.g. 1600]",
+
+  "about": {
+    "@type": "Thing",
+    "name": "[TOPIC — e.g. AI Search Optimization for Local Businesses]"
+  }
+}

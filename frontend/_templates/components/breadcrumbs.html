@@ -1,0 +1,56 @@
+<!--
+  BREADCRUMBS COMPONENT
+  =====================
+  Paste immediately after <body> opens (or after the <nav>).
+  Update the list items to match this page's actual path.
+  Pair with the BreadcrumbList JSON-LD schema in the <head>.
+
+  2-level example (service page):
+    Home > Services > [This Service]
+
+  3-level example (blog post):
+    Home > Blog > [This Post Title]
+-->
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    <li class="separator" aria-hidden="true">›</li>
+
+    <!-- For a service page: -->
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/services/" itemprop="item"><span itemprop="name">Services</span></a>
+      <meta itemprop="position" content="2" />
+    </li>
+
+    <li class="separator" aria-hidden="true">›</li>
+
+    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">[THIS PAGE TITLE]</span>
+      <meta itemprop="item" content="https://vaultmarketing.in/[FULL-PATH]/" />
+      <meta itemprop="position" content="3" />
+    </li>
+
+  </ol>
+</nav>
+
+<!--
+  VARIANTS — swap the middle item for other page types:
+
+  Blog post:
+    <a href="/blog.html">Blog</a>  →  position 2
+    [Post Title]                   →  position 3
+
+  Case study:
+    <a href="/case-studies.html">Case Studies</a>  →  position 2
+    [Client Name]                                   →  position 3
+
+  2-level (e.g. /services/ hub itself):
+    Remove the middle item and the second separator.
+    Home > Services (current, no link)
+-->

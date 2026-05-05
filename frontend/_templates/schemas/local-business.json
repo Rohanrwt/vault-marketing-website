@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Vault Marketing",
+  "description": "We get service businesses more clients. Meta Ads, SEO, Google Ads, AI search optimization, and conversion-focused websites for auto detailers in Canada and boutique resorts in India.",
+  "url": "https://vaultmarketing.in",
+  "email": "rohan@vaultmarketing.in",
+  "logo": "https://vaultmarketing.in/assets/favicon.png",
+  "image": "https://vaultmarketing.in/assets/og/home.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Rohan Rawat",
+    "url": "https://vaultmarketing.in/about/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dehradun",
+    "addressRegion": "Uttarakhand",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "India" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "City", "name": "Calgary", "containedInPlace": { "@type": "Province", "name": "Alberta" } },
+    { "@type": "City", "name": "Dehradun" },
+    { "@type": "City", "name": "Rishikesh" },
+    { "@type": "City", "name": "Gurugram" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Meta Ads for Auto Detailers", "url": "https://vaultmarketing.in/services/meta-ads-for-detailers/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO for Service Businesses", "url": "https://vaultmarketing.in/services/seo-for-service-businesses/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Search Optimization", "url": "https://vaultmarketing.in/services/ai-search-optimization/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Ads Management", "url": "https://vaultmarketing.in/services/google-ads-management/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development", "url": "https://vaultmarketing.in/services/website-development/" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/vaultmarketing.in"
+  ]
+}

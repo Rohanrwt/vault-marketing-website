@@ -1,0 +1,321 @@
+/* ============================================================
+   Vault Marketing — components.css
+   Shared UI components used across service, case study,
+   and blog pages. Requires style.css to be loaded first.
+   ============================================================ */
+
+
+/* ── BREADCRUMBS ─────────────────────────────────────────── */
+
+.breadcrumbs {
+  padding: 100px 60px 0;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.breadcrumbs-list a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs-list a:hover {
+  color: var(--accent);
+}
+
+.breadcrumbs-list .separator {
+  color: var(--border);
+  font-size: 11px;
+  user-select: none;
+}
+
+.breadcrumbs-list .current {
+  color: var(--black);
+  font-weight: 600;
+}
+
+
+/* ── CTA SECTION ─────────────────────────────────────────── */
+
+.cta-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 100px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse at 70% 30%, rgba(255,77,28,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 860px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.cta-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.cta-heading span {
+  color: var(--accent);
+}
+
+.cta-sub {
+  font-size: 1.05rem;
+  color: rgba(233,233,233,0.65);
+  max-width: 540px;
+  margin-bottom: 40px;
+  line-height: 1.65;
+}
+
+.cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: #e63d0d;
+  transform: scale(1.03);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(233,233,233,0.75);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 100px;
+  border: 1px solid rgba(233,233,233,0.18);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-ghost:hover {
+  color: var(--white);
+  border-color: rgba(233,233,233,0.45);
+}
+
+/* Light variant — for CTA sections on light background */
+.cta-section.cta-light {
+  background: var(--surface);
+  color: var(--black);
+}
+
+.cta-section.cta-light .cta-heading {
+  color: var(--black);
+}
+
+.cta-section.cta-light .cta-sub {
+  color: var(--muted);
+}
+
+.cta-section.cta-light .btn-ghost {
+  color: var(--black);
+  border-color: var(--border);
+}
+
+.cta-section.cta-light .btn-ghost:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* ── FAQ ACCORDION ───────────────────────────────────────── */
+
+.faq-section {
+  padding: 80px 60px;
+  background: var(--bg);
+}
+
+.faq-section-header {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.faq-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.faq-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--black);
+}
+
+.faq-list {
+  max-width: 760px;
+  list-style: none;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--black);
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s, transform 0.25s;
+}
+
+.faq-item.open .faq-icon {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-answer p {
+  padding-bottom: 24px;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.faq-answer a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 88px 24px 0;
+  }
+
+  .cta-section {
+    padding: 72px 24px;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .faq-section {
+    padding: 60px 24px;
+  }
+}

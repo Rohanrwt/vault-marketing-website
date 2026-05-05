@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+
+  "name": "[SERVICE NAME — e.g. Meta Ads for Auto Detailers]",
+  "description": "[1–2 sentence description of this specific service, outcome-led]",
+  "url": "https://vaultmarketing.in/services/[SLUG]/",
+  "serviceType": "[SERVICE TYPE — e.g. Paid Social Advertising]",
+
+  "provider": {
+    "@type": "Organization",
+    "name": "Vault Marketing",
+    "url": "https://vaultmarketing.in",
+    "email": "rohan@vaultmarketing.in"
+  },
+
+  "areaServed": [
+    "[AREA — e.g. Canada or India or Calgary]"
+  ],
+
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "[TARGET — e.g. Auto Detailing Businesses or Boutique Resorts]"
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "[PRICE RANGE — e.g. 1500]",
+      "priceCurrency": "[CURRENCY — INR or CAD]",
+      "minPrice": "[MIN]",
+      "maxPrice": "[MAX]"
+    }
+  }
+}

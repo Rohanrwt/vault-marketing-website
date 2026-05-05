@@ -1,0 +1,135 @@
+<!--
+  FAQ ACCORDION COMPONENT
+  =======================
+  Drop this section into any service, case study, or blog page.
+  - Duplicate .faq-item blocks for each Q&A pair (aim for 5).
+  - Pair with FAQPage JSON-LD schema in the <head>.
+  - The <script> at the bottom handles expand/collapse.
+    If this is the only accordion on the page, paste the script once
+    before </body>. If multiple accordions exist, the script handles all.
+
+  Target keywords: phrase questions exactly as users type them in Google.
+-->
+
+<section class="faq-section" aria-labelledby="faq-title">
+
+  <div class="faq-section-header">
+    <span class="faq-eyebrow">FAQ</span>
+    <h2 class="faq-title" id="faq-title">Questions we get asked a lot</h2>
+  </div>
+
+  <ul class="faq-list" role="list">
+
+    <li class="faq-item">
+      <button
+        class="faq-question"
+        aria-expanded="false"
+        aria-controls="faq-answer-1"
+        id="faq-q-1"
+      >
+        [QUESTION 1 — phrase as a user search query]
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-q-1">
+        <div class="faq-answer-inner">
+          <p>[ANSWER 1 — 2–4 sentences. Direct. Can link to a related service page.]</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button
+        class="faq-question"
+        aria-expanded="false"
+        aria-controls="faq-answer-2"
+        id="faq-q-2"
+      >
+        [QUESTION 2]
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-q-2">
+        <div class="faq-answer-inner">
+          <p>[ANSWER 2]</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button
+        class="faq-question"
+        aria-expanded="false"
+        aria-controls="faq-answer-3"
+        id="faq-q-3"
+      >
+        [QUESTION 3]
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-q-3">
+        <div class="faq-answer-inner">
+          <p>[ANSWER 3]</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button
+        class="faq-question"
+        aria-expanded="false"
+        aria-controls="faq-answer-4"
+        id="faq-q-4"
+      >
+        [QUESTION 4]
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-q-4">
+        <div class="faq-answer-inner">
+          <p>[ANSWER 4]</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button
+        class="faq-question"
+        aria-expanded="false"
+        aria-controls="faq-answer-5"
+        id="faq-q-5"
+      >
+        [QUESTION 5]
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-q-5">
+        <div class="faq-answer-inner">
+          <p>[ANSWER 5]</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- FAQ ACCORDION SCRIPT — paste once before </body> -->
+<script>
+  (function () {
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item   = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+
+        // Close all open items in the same list
+        btn.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(function (openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          openItem.querySelector('.faq-icon').textContent = '+';
+        });
+
+        // Open clicked item if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.querySelector('.faq-icon').textContent = '+'; // rotated via CSS
+        }
+      });
+    });
+  })();
+</script>
