@@ -3,7 +3,17 @@
     "allow": [
       "WebFetch(domain:www.thesalesagency.com)",
       "Bash(gh api *)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "PowerShell(claude marketplace add minhnv0807/fullstack-mkt-skills 2>&1)",
+      "PowerShell(where.exe claude 2>&1; Test-Path \"$env:APPDATA\\\\npm\\\\claude.cmd\"; Test-Path \"$env:LOCALAPPDATA\\\\AnthropicClaude\\\\claude.exe\")",
+      "Bash(git show *)",
+      "Read(//tmp/**)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
     ]
   }
 }
