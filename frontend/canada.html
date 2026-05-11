@@ -402,8 +402,9 @@
         background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-md);
         padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.35rem;
         transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
-        cursor: default;
+        cursor: default; text-decoration: none;
       }
+      a.city-card { cursor: pointer; }
       .city-card:hover { box-shadow: 0 6px 24px rgba(26,25,21,0.09); transform: translateY(-2px); border-color: rgba(194,75,37,0.28); }
       .city-card__name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
       .city-card__province { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-faint); }
@@ -770,36 +771,36 @@
             Whether you&rsquo;re searching for the best SEO agency in Calgary, Toronto, Vancouver, Ottawa, Edmonton, or Montreal &mdash; we know your local market and how to rank you above the competition. All work is remote, all reporting is in your time zone.
           </p>
           <div class="cities__grid reveal d3">
-            <div class="city-card">
+            <a href="seo-agency-calgary.html" class="city-card">
               <span class="city-card__name">Calgary</span>
               <span class="city-card__province">Alberta</span>
               <span class="city-card__tag">&#x2713; Active clients</span>
-            </div>
-            <div class="city-card">
+            </a>
+            <a href="seo-agency-toronto.html" class="city-card">
               <span class="city-card__name">Toronto</span>
               <span class="city-card__province">Ontario</span>
               <span class="city-card__tag">&#x2713; Accepting clients</span>
-            </div>
-            <div class="city-card">
+            </a>
+            <a href="seo-agency-vancouver.html" class="city-card">
               <span class="city-card__name">Vancouver</span>
               <span class="city-card__province">British Columbia</span>
               <span class="city-card__tag">&#x2713; Accepting clients</span>
-            </div>
-            <div class="city-card">
+            </a>
+            <a href="seo-agency-ottawa.html" class="city-card">
               <span class="city-card__name">Ottawa</span>
               <span class="city-card__province">Ontario</span>
               <span class="city-card__tag">&#x2713; Active clients</span>
-            </div>
-            <div class="city-card">
+            </a>
+            <a href="seo-agency-edmonton.html" class="city-card">
               <span class="city-card__name">Edmonton</span>
               <span class="city-card__province">Alberta</span>
               <span class="city-card__tag">&#x2713; Accepting clients</span>
-            </div>
-            <div class="city-card">
+            </a>
+            <a href="seo-agency-montreal.html" class="city-card">
               <span class="city-card__name">Montreal</span>
               <span class="city-card__province">Quebec</span>
               <span class="city-card__tag">&#x2713; Accepting clients</span>
-            </div>
+            </a>
             <div class="city-card">
               <span class="city-card__name">Winnipeg</span>
               <span class="city-card__province">Manitoba</span>
